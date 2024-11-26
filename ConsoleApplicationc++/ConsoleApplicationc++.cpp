@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Source.cpp"
 
 using namespace std;
 
@@ -36,9 +37,36 @@ void printTypeNumber(int numaType)
 		cout<<"Even";
 	}
 }
+
+infoP ReadInfo()
+{
+	infoP info;
+	cout << "please enter age\n";
+	cin >> info.age;
+	cout << "please enter licesson\n";
+	cin >> info.hasDrivenLesssion;
+	return info;
+}
+bool isAccepted(infoP info)
+{
+	return (info.age>18 && info.hasDrivenLesssion);
+}
+void printInfo(infoP info)
+{
+	if(isAccepted(info))
+	{
+		cout<<"accepted";
+	}
+	else
+	{
+		cout<<"not accepted";
+	}
+}
 int main()
 {
-	printTypeNumber(CheckNumber(ReadNumber(	)));
+	printInfo(ReadInfo());
+
+	//printTypeNumber(CheckNumber(ReadNumber(	)));
 
    /* string name;
     string age;
