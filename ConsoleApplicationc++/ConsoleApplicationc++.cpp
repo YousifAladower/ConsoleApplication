@@ -209,9 +209,37 @@ int calculatePower(int num, int power)
 	}
 	return result;
 }
+float readTotalsall()
+{
+	float total;
+	cout<<"please enter total\n";
+	cin>>total;
+	return total;
+}
+float readCominssion(float totalSall)
+{
+	if(totalSall<10000)
+	{
+		return 0.05;
+	}
+	else
+	{
+		return 0.1;
+	}
+}
+float calculateCominssion(float totalSall)
+{
+	return totalSall*readCominssion(totalSall);
+}
 int main()
 {
-	cout<<"power of number is"<<calculatePower(readNumber(),readPower());
+
+	float total = readTotalsall();
+	cout<<"comission is"<<calculateCominssion(total);
+	//cout<<"power of number is"<<calculatePower(readNumber(),readPower());
+
+
+
 	//int num;
 	//ReadPostiveNumber(num);
 	//cout<<"factorial of number is"<<calculatefactorial(num);
