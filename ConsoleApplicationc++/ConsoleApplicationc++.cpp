@@ -78,6 +78,15 @@ void ReadMark(int& num1, int& num2, int& num3)
 	cout<<"please enter mark3\n"	;
 	cin>> num3;
 }
+void ReadNumbers(int& num1, int& num2, int& num3)
+{
+	cout<<"please enter mark1\n"	;
+	cin>> num1;
+	cout<<"please enter mark2\n"	;
+	cin>> num2;
+	cout<<"please enter mark3\n"	;
+	cin>> num3;
+}
 
 enum  enPassFaild{pass=1,fail=2};
 bool checkpass(float average)
@@ -112,11 +121,37 @@ void printMark(int num1, int num2, int num3)
 		cout<<"fail";
 	}
 }
+
+
+int Max3Numbers(int num1, int num2, int num3)
+{
+	if(num1>num2 && num1>num3)
+	{
+		return num1;
+	}
+	else if(num2>num1 && num2>num3)
+	{
+		return num2;
+	}
+	else
+	{
+		return num3;
+	}
+}
+void printMax(int Max)
+{
+	cout<<"max number is"<<Max;
+}
 int main()
 {
-	int num1,num2,num3;
-      ReadMark(num1,num2,num3);
-	printMark(num1,num2,num3);
+
+	 int num1, num2, num3;
+	 ReadNumbers(num1, num2, num3);
+	 printMax(Max3Numbers(num1, num2, num3));
+
+	//int num1,num2,num3;
+ //     ReadMark(num1,num2,num3);
+	//printMark(num1,num2,num3);
 
 	//printHaf(ReadNumber());
 	//printInfo(ReadInfo());
