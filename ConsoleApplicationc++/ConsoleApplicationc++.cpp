@@ -62,9 +62,16 @@ void printInfo(infoP info)
 		cout<<"not accepted";
 	}
 }
+
+void printHaf(int num)
+{
+	string result ="half number"+to_string(num)+" "+"is :-"+to_string(num/2);
+	cout<<result;
+}
 int main()
 {
-	printInfo(ReadInfo());
+	printHaf(ReadNumber());
+	//printInfo(ReadInfo());
 
 	//printTypeNumber(CheckNumber(ReadNumber(	)));
 
