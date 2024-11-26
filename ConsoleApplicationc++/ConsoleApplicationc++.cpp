@@ -68,9 +68,36 @@ void printHaf(int num)
 	string result ="half number"+to_string(num)+" "+"is :-"+to_string(num/2);
 	cout<<result;
 }
+
+void ReadMark(int& num1, int& num2, int& num3)
+{
+	cout<<"please enter mark1\n"	;
+	cin>> num1;
+	cout<<"please enter mark2\n"	;
+	cin>> num2;
+	cout<<"please enter mark3\n"	;
+	cin>> num3;
+}
+int SumOf3Number(int num1, int num2, int num3)
+{
+	return num1+num2+num3;
+}
+float AverageOf3Number(int num1, int num2, int num3)
+{
+	return (num1+num2+num3)/3;
+}
+void printMark(int num1, int num2, int num3)
+{
+cout<<"sum of mark is"<<SumOf3Number(num1,num2,num3)<<endl;
+	cout<<"average of mark is"<<AverageOf3Number(num1,num2,num3)<<endl;
+}
 int main()
 {
-	printHaf(ReadNumber());
+	int num1,num2,num3;
+      ReadMark(num1,num2,num3);
+	printMark(num1,num2,num3);
+
+	//printHaf(ReadNumber());
 	//printInfo(ReadInfo());
 
 	//printTypeNumber(CheckNumber(ReadNumber(	)));
