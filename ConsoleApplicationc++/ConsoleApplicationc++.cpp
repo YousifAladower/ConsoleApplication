@@ -142,12 +142,60 @@ void printMax(int Max)
 {
 	cout<<"max number is"<<Max;
 }
-int main()
+
+float ReadNumber(float& num)
+{
+	cout<<"please enter number\n";
+	cin>>num;
+	return num;
+}
+float calculateCircleArea(float radius)
+{
+	return (pow(radius,2) /(4* 3.14) );
+}
+void printAreaOfCircle(float radius)
+{
+	cout<<"area of circle is"<<calculateCircleArea(radius);
+}
+int ReadPostiveNumber(int& num)
 {
 
-	 int num1, num2, num3;
+	do 
+	{
+		cout<<"please enter postive number\n";
+		cin>>num;
+		if(num<0)
+		{
+			cout<<"please enter postive number\n";
+		}
+		
+
+	}while(num<0);
+	return num;
+}
+int calculatefactorial(int num)
+{
+	int fact=1;
+	for(int i=1;i<=num;i++)
+	{
+		fact=fact*i;
+	}
+	return fact;
+}
+int main()
+{
+	int num;
+	ReadPostiveNumber(num);
+	cout<<"factorial of number is"<<calculatefactorial(num);
+
+	/*float l;
+	ReadNumber(l);
+	printAreaOfCircle(l);*/
+
+
+	/* int num1, num2, num3;
 	 ReadNumbers(num1, num2, num3);
-	 printMax(Max3Numbers(num1, num2, num3));
+	 printMax(Max3Numbers(num1, num2, num3));*/
 
 	//int num1,num2,num3;
  //     ReadMark(num1,num2,num3);
