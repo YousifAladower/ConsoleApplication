@@ -182,11 +182,39 @@ int calculatefactorial(int num)
 	}
 	return fact;
 }
-int main()
+int readPower()
+{
+	int power;
+	cout<<"please enter power\n";
+	cin>>power;
+	return power;
+}
+int readNumber()
 {
 	int num;
-	ReadPostiveNumber(num);
-	cout<<"factorial of number is"<<calculatefactorial(num);
+	cout<<"please enter number\n";
+	cin>>num;
+	return num;
+}
+int calculatePower(int num, int power)
+{
+	if (power == 0)
+	{
+		return 1;
+	}
+	int result=1;
+	for(int i=1;i<=power;i++)
+	{
+		result=result*num;
+	}
+	return result;
+}
+int main()
+{
+	cout<<"power of number is"<<calculatePower(readNumber(),readPower());
+	//int num;
+	//ReadPostiveNumber(num);
+	//cout<<"factorial of number is"<<calculatefactorial(num);
 
 	/*float l;
 	ReadNumber(l);
