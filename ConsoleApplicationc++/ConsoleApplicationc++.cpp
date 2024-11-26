@@ -6,9 +6,41 @@
 
 using namespace std;
 
+enum enNumberTpe{Odd=1,Even=2};
+int ReadNumber()
+{
+	int num;
+	cout << "please enter number\n";
+	cin >> num;
+	return num;
+}
+enNumberTpe CheckNumber(int num)
+{
+    if(num%2==0)
+	{
+		return Even;
+	}
+	else
+	{
+		return Odd;
+	}
+}
+void printTypeNumber(int numaType)
+{
+    if(numaType==Odd)
+	{
+		cout<<"Odd";
+	}
+	else
+	{
+		cout<<"Even";
+	}
+}
 int main()
 {
-    string name;
+	printTypeNumber(CheckNumber(ReadNumber(	)));
+
+   /* string name;
     string age;
     cout << "enter Your name!\n";
     cin >> name;
@@ -16,7 +48,7 @@ int main()
     cout << "enter Your age!\n";
     getline(cin, age);
 
-    cout<<"hello"<<name<<" your age is "<<age<<endl;
+    cout<<"hello"<<name<<" your age is "<<age<<endl;*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
