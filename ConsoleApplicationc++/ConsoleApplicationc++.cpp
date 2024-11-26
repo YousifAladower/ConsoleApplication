@@ -78,6 +78,19 @@ void ReadMark(int& num1, int& num2, int& num3)
 	cout<<"please enter mark3\n"	;
 	cin>> num3;
 }
+
+enum  enPassFaild{pass=1,fail=2};
+bool checkpass(float average)
+{
+	if(average>=50)
+	{
+		return enPassFaild::pass;
+	}
+	else
+	{
+		return enPassFaild::fail;
+	}
+}
 int SumOf3Number(int num1, int num2, int num3)
 {
 	return num1+num2+num3;
@@ -88,8 +101,16 @@ float AverageOf3Number(int num1, int num2, int num3)
 }
 void printMark(int num1, int num2, int num3)
 {
-cout<<"sum of mark is"<<SumOf3Number(num1,num2,num3)<<endl;
+     cout<<"sum of mark is"<<SumOf3Number(num1,num2,num3)<<endl;
 	cout<<"average of mark is"<<AverageOf3Number(num1,num2,num3)<<endl;
+	if(checkpass(AverageOf3Number(num1,num2,num3))== enPassFaild::pass)
+	{
+		cout<<"pass";
+	}
+	else
+	{
+		cout<<"fail";
+	}
 }
 int main()
 {
