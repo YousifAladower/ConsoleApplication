@@ -219,13 +219,9 @@ float readTotalsall()
 float readCominssion(float totalSall)
 {
 	if(totalSall<10000)
-	{
 		return 0.05;
-	}
 	else
-	{
 		return 0.1;
-	}
 }
 float calculateCominssion(float totalSall)
 {
