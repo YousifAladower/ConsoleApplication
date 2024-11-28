@@ -227,11 +227,55 @@ float calculateCominssion(float totalSall)
 {
 	return totalSall*readCominssion(totalSall);
 }
+
+enum  enOperationType
+{
+	Add='+',subSract ='-',Multiply='*', Divide='/'
+};
+float ReadNumber(string Message)
+{
+	float Number;
+	cout << Message;
+	cin >> Number;
+	return Number;
+}
+enOperationType ReadOperation()
+{
+	char OT = '+';
+	cout << "please enter opertation?  \n";
+   cin >> OT;
+	return (enOperationType)OT;
+}
+float calculate(float num1, float num2, enOperationType OT)
+{
+	if (OT == enOperationType::Add)
+	{
+		return num1 + num2;
+	}
+	else if (OT == enOperationType::subSract)
+	{
+		return num1 - num2;
+	}
+	else if (OT == enOperationType::Multiply)
+	{
+		return num1 * num2;
+	}
+	else
+	{
+		return num1 / num2;
+	}
+}
 int main()
 {
+	int num1, num2, num3;
+	num1 = ReadNumber("enter number1\n");
+	num2 = ReadNumber("enter number2\n");
+	 cout<<"result is"<< calculate(num1, num2, ReadOperation());
 
-	float total = readTotalsall();
-	cout<<"comission is"<<calculateCominssion(total);
+	//float total = readTotalsall();
+	//cout<<"comission is"<<calculateCominssion(total);
+
+
 	//cout<<"power of number is"<<calculatePower(readNumber(),readPower());
 
 
