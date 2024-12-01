@@ -157,20 +157,37 @@ void printAreaOfCircle(float radius)
 {
 	cout<<"area of circle is"<<calculateCircleArea(radius);
 }
-int ReadPostiveNumber(int& num)
+//int ReadPostiveNumber(int& num)
+//{
+//
+//	do 
+//	{
+//		cout<<"please enter postive number\n";
+//		cin>>num;
+//		if(num<0)
+//		{
+//			cout<<"please enter postive number\n";
+//		}
+//		
+//
+//	}while(num<0);
+//	return num;
+//}
+
+int ReadPostiveNumber(string Message)
 {
-
-	do 
+	int num;
+	do
 	{
-		cout<<"please enter postive number\n";
-		cin>>num;
-		if(num<0)
+		cout << Message;
+		cin >> num;
+		if (num < 0)
 		{
-			cout<<"please enter postive number\n";
+			cout << "please enter postive number\n";
 		}
-		
 
-	}while(num<0);
+
+	} while (num < 0);
 	return num;
 }
 int calculatefactorial(int num)
@@ -277,16 +294,66 @@ float DaysToWeeks(float days)
 {
 	return days / 7;
 }
+
+struct StrTaskDuration
+{
+	int NumberOfDays, NumberOfHours, NumberOfMinutes, NumberOfSeconds;
+};
+StrTaskDuration ReadTaskDuration()
+{
+	StrTaskDuration TD;
+    TD.NumberOfDays = ReadPostiveNumber("please enter number of days\n");
+	TD.NumberOfHours = ReadPostiveNumber("please enter number of hours\n");
+	TD.NumberOfMinutes = ReadPostiveNumber("please enter number of minutes\n");
+	TD.NumberOfSeconds = ReadPostiveNumber("please enter number of seconds\n");
+	return TD;
+}
+float calculateTaskDuration(StrTaskDuration TD)
+{
+	return TD.NumberOfDays * 24 * 60 * 60 + TD.NumberOfHours * 60 * 60 + TD.NumberOfMinutes * 60 + TD.NumberOfSeconds;
+}
+
+StrTaskDuration SecondsToTaskDuration(int TotalSecond)
+{
+	StrTaskDuration TD;
+	const int SecondPerDay = 24 * 60 * 60;
+	const int SecondPerHour = 60 * 60;
+	const int SecondPerMinute = 60;
+
+	TD.NumberOfDays = TotalSecond / SecondPerDay;
+	TD.NumberOfHours = (TotalSecond % SecondPerDay) / SecondPerHour;
+	TD.NumberOfMinutes = ((TotalSecond % SecondPerDay) % SecondPerHour) / SecondPerMinute;
+	TD.NumberOfSeconds = ((TotalSecond % SecondPerDay) % SecondPerHour) % SecondPerMinute;
+
+	return TD;
+
+}
+
 int main()
 {
-	float hour;
-	ReadNumber(hour);
-	float day = HourToDays(hour);
-	float week = HourToWeeks(hour);
-	float weeks = DaysToWeeks(day);
-	cout << "hour to days is " << day << endl;
-	cout << "hour to weeks is " << week << endl;
-	cout << "days to weeks is " << weeks << endl;
+
+	int TotalSecond = ReadPostiveNumber("please enter number of seconds\n");
+
+	StrTaskDuration TD = SecondsToTaskDuration(TotalSecond);
+	cout<<"\n";
+	cout <<  TD.NumberOfDays <<":"
+	 <<TD.NumberOfHours << ":"
+		<< TD.NumberOfMinutes << ":"
+	 << TD.NumberOfSeconds << "\n";
+
+
+	//cout << "total duration is" << calculateTaskDuration(ReadTaskDuration()) << endl;
+
+
+
+	//float hour;
+	//ReadNumber(hour);
+	//float day = HourToDays(hour);
+	//float week = HourToWeeks(hour);
+	//float weeks = DaysToWeeks(day);
+	//cout << "hour to days is " << day << endl;
+	//cout << "hour to weeks is " << week << endl;
+	//cout << "days to weeks is " << weeks << endl;
 
 	/*int num1, num2, num3;
 	num1 = ReadNumber("enter number1\n");
