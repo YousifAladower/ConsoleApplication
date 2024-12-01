@@ -329,17 +329,100 @@ StrTaskDuration SecondsToTaskDuration(int TotalSecond)
 
 }
 
-int main()
+enum  enDayOfWeek
+{
+	saturday, sunday, monday, tuesday, wednesday, thursday, friday
+};
+
+int ReadInRange(string Message, int From, int To)
+{
+	int num;
+	do
+	{
+		cout << Message;
+		cin >> num;
+		if (num < From || num > To)
+		{
+			cout << "out of range\n";
+		}
+	} while (num < From || num > To);
+	return num;
+}
+string GetDayName(enDayOfWeek Day)
 {
 
-	int TotalSecond = ReadPostiveNumber("please enter number of seconds\n");
+	switch (Day)
+	{
+	case enDayOfWeek::saturday:
+		return "saturday";
+	case enDayOfWeek::sunday:
+		return "sunday";
+	case enDayOfWeek::monday:
+		return "monday";
+	case enDayOfWeek::tuesday:
+		return "tuesday";
+	case enDayOfWeek::wednesday:
+		return "wednesday";
+	case enDayOfWeek::thursday:
+		return "thursday";
+	case enDayOfWeek::friday:
+		return "friday";
+	}
+
+}
+
+enDayOfWeek ReadDayName()
+{
+	return (enDayOfWeek) ReadInRange("please enter day number\n", 1, 7);
+}
+string ReadPinCode()
+{
+	string PinCode;
+	cout << "please enter pin code\n";
+	cin >> PinCode;
+	return PinCode;
+}
+bool login()
+{
+	
+	string PinCode;
+	do
+	{
+		PinCode = ReadPinCode();
+		if (PinCode == "1234")
+		{
+			return 1;
+		}
+		else
+		{
+			system("color 4F");
+			cout<<"wrong pin code\n";
+		}
+		
+	} while (PinCode != "1234");
+	return 0;
+}
+int main()
+{
+	if(login())
+	{
+		system("color 2F");
+		cout << "welcome\n";
+	}
+	return 0;
+
+	//cout<<GetDayName(ReadDayName());
+
+
+
+	/*int TotalSecond = ReadPostiveNumber("please enter number of seconds\n");
 
 	StrTaskDuration TD = SecondsToTaskDuration(TotalSecond);
 	cout<<"\n";
 	cout <<  TD.NumberOfDays <<":"
 	 <<TD.NumberOfHours << ":"
 		<< TD.NumberOfMinutes << ":"
-	 << TD.NumberOfSeconds << "\n";
+	 << TD.NumberOfSeconds << "\n";*/
 
 
 	//cout << "total duration is" << calculateTaskDuration(ReadTaskDuration()) << endl;
