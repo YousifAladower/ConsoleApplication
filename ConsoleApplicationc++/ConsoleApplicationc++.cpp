@@ -265,12 +265,33 @@ float calculate(float num1, float num2, enOperationType OT)
 		return num1 / num2;
 	}
 }
+float HourToDays(float hour)
+{
+	return hour / 24;
+}
+float HourToWeeks(float hour)
+{
+	return hour / 24 / 7;
+}
+float DaysToWeeks(float days)
+{
+	return days / 7;
+}
 int main()
 {
-	int num1, num2, num3;
+	float hour;
+	ReadNumber(hour);
+	float day = HourToDays(hour);
+	float week = HourToWeeks(hour);
+	float weeks = DaysToWeeks(day);
+	cout << "hour to days is " << day << endl;
+	cout << "hour to weeks is " << week << endl;
+	cout << "days to weeks is " << weeks << endl;
+
+	/*int num1, num2, num3;
 	num1 = ReadNumber("enter number1\n");
 	num2 = ReadNumber("enter number2\n");
-	 cout<<"result is"<< calculate(num1, num2, ReadOperation());
+	 cout<<"result is"<< calculate(num1, num2, ReadOperation());*/
 
 	//float total = readTotalsall();
 	//cout<<"comission is"<<calculateCominssion(total);
