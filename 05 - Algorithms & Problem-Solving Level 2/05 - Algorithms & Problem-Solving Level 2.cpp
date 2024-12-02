@@ -45,7 +45,7 @@ void SumDigits(int num)
 	}
 	cout <<"sum of digits is :" << sum;
 }
-void GetReverseDigits(int num)
+int GetReverseDigits(int num)
 {
 	int Remaind = 0;
 	int rev = 0;
@@ -55,7 +55,7 @@ void GetReverseDigits(int num)
 		num = num / 10;
 		rev = rev * 10 + Remaind;
 	}
-	cout << "reverse of digits is :" << rev;
+	return rev;
 }
 int GetFrequentlyTimesForDigits(int num2,int num)
 {
@@ -106,7 +106,8 @@ void GetEveryDigitsFrequentlyTimes(int num)
 int main()
 {
 
-	GetEveryDigitsFrequentlyTimes(ReadPostiveNumber("Enter positive number: "));
+	printDigits(GetReverseDigits(ReadPostiveNumber("Enter positive number: ")));
+	//GetEveryDigitsFrequentlyTimes(ReadPostiveNumber("Enter positive number: "));
 
 	//GetFrequentlyTimesForDigits(ReadPostiveNumber("Enter the number you want to know Frequently: "),ReadPostiveNumber("Enter positive number: "));
 	
