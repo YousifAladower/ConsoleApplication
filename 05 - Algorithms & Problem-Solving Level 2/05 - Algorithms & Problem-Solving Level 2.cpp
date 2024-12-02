@@ -25,6 +25,7 @@ int ReadPostiveNumber(string Message)
 void printDigits(int num)
 {
 	int Remaind = 0;
+
 	while (num > 0)
 	{
 		Remaind = num % 10;
@@ -32,9 +33,38 @@ void printDigits(int num)
 		cout << Remaind;
 	}
 }
+void SumDigits(int num)
+{
+	int Remaind = 0;
+	int sum = 0;
+	while (num > 0)
+	{
+		Remaind = num % 10;
+		num = num / 10;
+		sum = sum + Remaind;
+	}
+	cout <<"sum of digits is :" << sum;
+}
+void GetReverseDigits(int num)
+{
+	int Remaind = 0;
+	int rev = 0;
+	while (num > 0)
+	{
+		Remaind = num % 10;
+		num = num / 10;
+		rev = rev * 10 + Remaind;
+	}
+	cout << "reverse of digits is :" << rev;
+}
 int main()
 {
-   printDigits(ReadPostiveNumber("Enter positive number: "));
+
+	
+	GetReverseDigits(ReadPostiveNumber("Enter positive number: "));
+
+	//SumDigits(ReadPostiveNumber("Enter positive number: "));
+   //printDigits(ReadPostiveNumber("Enter positive number: "));
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
