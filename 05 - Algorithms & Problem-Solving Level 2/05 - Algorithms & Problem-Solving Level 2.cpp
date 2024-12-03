@@ -103,10 +103,24 @@ void GetEveryDigitsFrequentlyTimes(int num)
 		cout << "frequently times for digits is :" << Remaind << " is : "<< count;
 	}*/
 }
+
+void GetPalendromeDigits(int num)
+{
+	int ReversNumber = GetReverseDigits(num);
+	if (num == ReversNumber)
+	{
+		cout << "this number is palindrome";
+	}
+	else
+	{
+		cout << "this number is not palindrome";
+	}
+}
 int main()
 {
+	GetPalendromeDigits(ReadPostiveNumber("Enter positive number: "));
 
-	printDigits(GetReverseDigits(ReadPostiveNumber("Enter positive number: ")));
+	//printDigits(GetReverseDigits(ReadPostiveNumber("Enter positive number: ")));
 	//GetEveryDigitsFrequentlyTimes(ReadPostiveNumber("Enter positive number: "));
 
 	//GetFrequentlyTimesForDigits(ReadPostiveNumber("Enter the number you want to know Frequently: "),ReadPostiveNumber("Enter positive number: "));
