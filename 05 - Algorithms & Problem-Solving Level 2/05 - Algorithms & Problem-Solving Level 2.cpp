@@ -116,9 +116,35 @@ void GetPalendromeDigits(int num)
 		cout << "this number is not palindrome";
 	}
 }
+
+void GetInvertedNumber(int num)
+{
+	//for(int i = num; i > 0; i--)
+	//{
+	//	int rev = 0;
+	//	for (int j = 0; j < i; j++)
+	//	{
+	//		rev = rev * 10 + i;
+	//	}
+	//	cout << rev<<"\n";
+	//}
+
+	for (int i = num; i > 0; i--)
+	{
+		
+		for (int j = 0; j < i; j++)
+		{
+			cout << i  ;
+		}
+		cout <<  "\n";
+	}
+}
 int main()
 {
-	GetPalendromeDigits(ReadPostiveNumber("Enter positive number: "));
+	GetInvertedNumber(ReadPostiveNumber("Enter positive number: "));
+
+
+	//GetPalendromeDigits(ReadPostiveNumber("Enter positive number: "));
 
 	//printDigits(GetReverseDigits(ReadPostiveNumber("Enter positive number: ")));
 	//GetEveryDigitsFrequentlyTimes(ReadPostiveNumber("Enter positive number: "));
