@@ -129,7 +129,7 @@ void GetInvertedNumber(int num)
 	//	cout << rev<<"\n";
 	//}
 
-	for (int i = num; i > 0; i--)
+	for (int i = num; i > 0; i++)
 	{
 		
 		for (int j = 0; j < i; j++)
@@ -139,9 +139,25 @@ void GetInvertedNumber(int num)
 		cout <<  "\n";
 	}
 }
+
+void GetNumberPattern(int num)
+{
+
+	for (int i = 1; i <= num; i++)
+	{
+
+		for (int j = 1; j <= i; j++)
+		{
+			cout << i;
+		}
+		cout << "\n";
+	}
+}
 int main()
 {
-	GetInvertedNumber(ReadPostiveNumber("Enter positive number: "));
+	GetNumberPattern(ReadPostiveNumber("Enter positive number: "));
+
+	//GetInvertedNumber(ReadPostiveNumber("Enter positive number: "));
 
 
 	//GetPalendromeDigits(ReadPostiveNumber("Enter positive number: "));
