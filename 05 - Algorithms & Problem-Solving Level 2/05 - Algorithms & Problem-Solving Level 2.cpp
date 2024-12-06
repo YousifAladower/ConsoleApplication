@@ -153,6 +153,9 @@ void GetNumberPattern(int num)
 		cout << "\n";
 	}
 }
+
+
+
 int main()
 {
 	GetNumberPattern(ReadPostiveNumber("Enter positive number: "));
