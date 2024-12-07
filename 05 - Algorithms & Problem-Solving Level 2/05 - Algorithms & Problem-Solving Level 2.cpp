@@ -154,11 +154,45 @@ void GetNumberPattern(int num)
 	}
 }
 
+string ReadLetters(string Message)
+{
+	string str;
+	cout << Message;
+	cin >> str;
+	return str;
+}
 
+string Encryption(string str, int key)
+{
+
+	for (int i = 0; i < str.length(); i++)
+	{
+		str[i] = str[i] + key;
+	}
+	return str;
+
+}
+string Decryption(string str, int key)
+{
+
+	for (int i = 0; i < str.length(); i++)
+	{
+		str[i] = str[i] - key;
+	}
+	return str;
+}
 
 int main()
 {
-	GetNumberPattern(ReadPostiveNumber("Enter positive number: "));
+	string str = ReadLetters("Enter string: ");
+	int key = ReadPostiveNumber("Enter key: ");
+	string encryptedString = Encryption(str, key);
+
+	cout << "encrypted string is :" << encryptedString;
+
+	cout << "\ndecrypted string is :" << Decryption(encryptedString, key);
+
+	//GetNumberPattern(ReadPostiveNumber("Enter positive number: "));
 
 	//GetInvertedNumber(ReadPostiveNumber("Enter positive number: "));
 
