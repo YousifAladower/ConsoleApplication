@@ -182,15 +182,28 @@ string Decryption(string str, int key)
 	return str;
 }
 
+void printRandom3NumberFrom1to100()
+{
+
+	srand(time(NULL));
+	for (int i = 0; i < 3; i++)
+	{
+		cout << rand() % 100 + 1 << " ";
+	}
+}
+
 int main()
 {
-	string str = ReadLetters("Enter string: ");
-	int key = ReadPostiveNumber("Enter key: ");
-	string encryptedString = Encryption(str, key);
 
-	cout << "encrypted string is :" << encryptedString;
+	printRandom3NumberFrom1to100();
 
-	cout << "\ndecrypted string is :" << Decryption(encryptedString, key);
+	//string str = ReadLetters("Enter string: ");
+	//int key = ReadPostiveNumber("Enter key: ");
+	//string encryptedString = Encryption(str, key);
+
+	//cout << "encrypted string is :" << encryptedString;
+
+	//cout << "\ndecrypted string is :" << Decryption(encryptedString, key);
 
 	//GetNumberPattern(ReadPostiveNumber("Enter positive number: "));
 
