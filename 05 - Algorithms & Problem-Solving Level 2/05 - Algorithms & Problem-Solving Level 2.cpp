@@ -185,17 +185,28 @@ string Decryption(string str, int key)
 void printRandom3NumberFrom1to100()
 {
 
-	srand(time(NULL));
+	
 	for (int i = 0; i < 3; i++)
 	{
 		cout << rand() % 100 + 1 << " ";
 	}
 }
 
+int RandomNumber(int min, int max)
+{
+	int nu= (max - min + 1) + min;
+	int randd= rand() % (max - min + 1) + min;
+	return randd;
+}
 int main()
 {
+	srand(time(NULL));
 
-	printRandom3NumberFrom1to100();
+	cout << RandomNumber(1, 100)<<"\n";
+	cout << RandomNumber(1, 100)<<"\n";
+	cout << RandomNumber(1, 100)<<"\n";
+
+	//printRandom3NumberFrom1to100();
 
 	//string str = ReadLetters("Enter string: ");
 	//int key = ReadPostiveNumber("Enter key: ");
