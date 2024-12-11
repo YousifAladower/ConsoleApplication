@@ -198,13 +198,26 @@ int RandomNumber(int min, int max)
 	int randd= rand() % (max - min + 1) + min;
 	return randd;
 }
+
+string printRandom5LetterString()
+{
+	string str(5, ' ');
+	for (int i = 0; i < 5; i++)
+	{
+		str[i] = 'A' + rand() % 26;
+	}
+	return str;
+}
 int main()
 {
 	srand(time(NULL));
 
+
+	cout<<printRandom5LetterString();
+
+	/*cout << RandomNumber(1, 100)<<"\n";
 	cout << RandomNumber(1, 100)<<"\n";
-	cout << RandomNumber(1, 100)<<"\n";
-	cout << RandomNumber(1, 100)<<"\n";
+	cout << RandomNumber(1, 100)<<"\n";*/
 
 	//printRandom3NumberFrom1to100();
 
