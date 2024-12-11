@@ -199,7 +199,7 @@ int RandomNumber(int min, int max)
 	return randd;
 }
 
-string printRandom5LetterString()
+string GetRandom5LetterString()
 {
 	string str(5, ' ');
 	for (int i = 0; i < 5; i++)
@@ -208,12 +208,35 @@ string printRandom5LetterString()
 	}
 	return str;
 }
+string GeneratRandomString(int length)
+{
+	string str(length, ' ');
+	for (int i = 0; i < length; i++)
+	{
+		str[i] = 'A' + rand() % 26;
+	}
+	return str;
+}
+string GeneratKey(int length)
+{
+	string key = "";
+	key= GeneratRandomString(length)+"-"+GeneratRandomString(length)+"-" + GeneratRandomString(length)+"-" + GeneratRandomString(length);
+	return key;
+}
+void GenerateKeys()
+{
+	for (int i = 0; i < 10; i++)
+	{
+		cout<<"["<<i+1<<"]::";
+		cout << GeneratKey(5) << "\n";
+	}
+}
 int main()
 {
 	srand(time(NULL));
 
+	GenerateKeys();
 
-	cout<<printRandom5LetterString();
 
 	/*cout << RandomNumber(1, 100)<<"\n";
 	cout << RandomNumber(1, 100)<<"\n";
