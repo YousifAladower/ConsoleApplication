@@ -223,19 +223,19 @@ string GeneratKey(int length)
 	key= GeneratRandomString(length)+"-"+GeneratRandomString(length)+"-" + GeneratRandomString(length)+"-" + GeneratRandomString(length);
 	return key;
 }
-void GenerateKeys()
+void GenerateKeys(int num)
 {
 	for (int i = 0; i < 10; i++)
 	{
 		cout<<"["<<i+1<<"]::";
-		cout << GeneratKey(5) << "\n";
+		cout << GeneratKey(num) << "\n";
 	}
 }
 int main()
 {
 	srand(time(NULL));
 
-	GenerateKeys();
+	GenerateKeys(ReadPostiveNumber("Enter key number: "));
 
 
 	/*cout << RandomNumber(1, 100)<<"\n";
