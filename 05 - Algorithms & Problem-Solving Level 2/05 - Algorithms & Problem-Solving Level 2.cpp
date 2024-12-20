@@ -231,11 +231,83 @@ void GenerateKeys(int num)
 		cout << GeneratKey(num) << "\n";
 	}
 }
+
+void ReadNumberOfArrayEntryByUser()
+{
+	int num;
+	cout << "Enter number of array entry: ";
+	cin >> num;
+	int* arr = new int[num];
+	for (int i = 0; i < num; i++)
+	{
+		cout << "Enter number " << i + 1 << " : ";
+		cin >> arr[i];
+	}
+	for (int i = 0; i < num; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout <<"\n" << "Enter number of array you want to check how many time it repeated: ";
+	int num2;
+	cin >> num2;
+	int count = 0;
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i] == num2)
+		{
+			count++;
+		}
+	}
+	cout << "Number " << num2 << " repeated " << count << " times";
+	//delete[] arr;
+}
+void ReadArray(int arr[100], int& LengthArray)
+{
+	cout << "\nEnter number of array entry: \n";
+	cin >> LengthArray;
+	cout << "Enter array elements: \n";
+    for (int i = 0; i < LengthArray; i++)
+	{
+		cout << "Enter number [ " << i + 1 << " ] " << " : ";
+		cin >> arr[i];
+	}
+	cout << endl;
+
+}
+void printArray(int arr[100], int LengthArray) {
+
+	for (int i = 0; i < LengthArray; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+int timeReapeted(int arr[100], int LengthArray, int checkNumber)
+{
+	int count = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		if (arr[i] == checkNumber)
+		{
+			count++;
+		}
+	}
+	return count;
+}
 int main()
 {
 	srand(time(NULL));
 
-	GenerateKeys(ReadPostiveNumber("Enter key number: "));
+	int arr[100]; int LengthArray; int checkNumber;
+
+	ReadArray(arr, LengthArray);
+	printArray(arr, LengthArray);
+	checkNumber = ReadPostiveNumber("Enter number of array you want to check how many time it repeated: ");
+	cout << "Number " << checkNumber << " repeated " << timeReapeted(arr, LengthArray, checkNumber) << " times\n";
+
+	//ReadNumberOfArrayEntryByUser();
+
+	//GenerateKeys(ReadPostiveNumber("Enter key number: "));
 
 
 	/*cout << RandomNumber(1, 100)<<"\n";
