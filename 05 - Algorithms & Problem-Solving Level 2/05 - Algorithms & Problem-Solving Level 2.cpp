@@ -396,18 +396,94 @@ void GetPrimeNumbers(int arr1[100], int arr2[100], int LengthArray ,int& LengthA
 	}
 	LengthArray2 = --counter;
 }
+void GetSumofArrays(int arr1[100], int arr2[100], int arr3[100], int LengthArray)
+{
+	int sum = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		arr3[i] = arr1[i] + arr2[i];
+	}
 
+}
+void printArrayFrom(int arr[100], int& LengthArray)
+{
+	cout<<"inter array elements: \n";
+	cin>>LengthArray;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+void FillArrayFrom1ToN(int arr[100], int& LengthArray)
+{
+	cout << "inter array elements: \n";
+	cin >> LengthArray;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		arr[i] = i + 1;
+	}
+}
+void MixArray(int arr1[100],int arr2[100], int LengthArray)
+{
+	int mix = 0;
+
+	for (int i = 0;i < LengthArray;i++)
+	{
+		mix = rand() % LengthArray+1;
+		arr2[i] = mix;
+	}
+}
+void Swap(int& num1, int& num2)
+{
+	int temp = num1;
+	num1 = num2;
+	num2 = temp;
+}
+void ShuffleArray(int arr1[100], int LengthArray)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		Swap(arr1[RandomNumber(1, LengthArray)-1], arr1[RandomNumber(1, LengthArray)-1]);
+	}
+
+}
 int main()
 {
 	srand(time(NULL));
 
+	int arr1[100] , LengthArray, checkNumber, arr2[100], LengthArray2 , arr3[100];
 
-	int arr1[100]; int LengthArray; int checkNumber; int arr2[100]; int LengthArray2;
+	FillArrayFrom1ToN(arr1, LengthArray);
+	cout<<"oraginal array \n";
+	printArray(arr1, LengthArray);
+	ShuffleArray(arr1, LengthArray);
+	cout<< "\n Shuffle of arrays \n";
+	printArray(arr1, LengthArray);
 
-	printRandomArray(arr1, LengthArray);
-	GetPrimeNumbers(arr1, arr2, LengthArray , LengthArray2);
-	cout << "\n prime Numbers \n";
-	printArray(arr2, LengthArray2);
+
+
+	//int arr1[100], LengthArray, checkNumber, arr2[100], LengthArray2, arr3[100];
+
+	//printRandomArray(arr1, LengthArray);
+	//printRandomArray(arr2, LengthArray);
+	//GetSumofArrays(arr1, arr2, arr3, LengthArray);
+	//cout << "\n sum of arrays \n";
+	//printArray(arr3, LengthArray);
+
+	//int arr1[100]; int LengthArray; int checkNumber; int arr2[100]; int LengthArray2;
+	//int arr3[3] = { 3,7,11 }; int LengthArray3 = 3;
+
+	//cout << "\n prime Numbers \n";
+	//GetPrimeNumbers(arr3, LengthArray3);
+	//cout << "\n prime Numbers \n";
+
+	//int arr1[100]; int LengthArray; int checkNumber; int arr2[100]; int LengthArray2;
+
+	//printRandomArray(arr1, LengthArray);
+	//GetPrimeNumbers(arr1, arr2, LengthArray , LengthArray2);
+	//cout << "\n prime Numbers \n";
+	//printArray(arr2, LengthArray2);
 
 	/*int arr1[100]; int LengthArray; int checkNumber; int arr2[100];
 
