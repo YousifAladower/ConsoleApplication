@@ -294,16 +294,139 @@ int timeReapeted(int arr[100], int LengthArray, int checkNumber)
 	}
 	return count;
 }
+void printRandomArray(int arr[100], int& LengthArray)
+{
+	cout << "Enter number of array entry: \n";
+	cin >> LengthArray;
+	int randomNumber = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		randomNumber = rand() % 100 + 1;
+		arr[i] = randomNumber;
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int GetMaxNumberOfArray(int arr[100], int LengthArray)
+{
+	int max = arr[0];
+	for (int i = 1; i < LengthArray; i++)
+	{
+		if (arr[i] > max)
+		{
+			max = arr[i];
+		}
+	}
+	return max;
+}
+
+int GetMinNumberOfArray(int arr[100], int LengthArray)
+{
+	int min = arr[0];
+	for (int i = 1; i < LengthArray; i++)
+	{
+		if (arr[i] < min)
+		{
+			min = arr[i];
+		}
+	}
+	return min;
+}
+int GetSumofArray(int arr[100], int LengthArray)
+{
+	int sum = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		sum = sum + arr[i];
+	}
+	return sum;
+}
+double GetAverageofArray(int arr[100], int LengthArray)
+{
+	int sum = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		sum = sum + arr[i];
+	}
+	return sum / LengthArray;
+}
+void printCopyFromPrintRandomArray(int arr1[100],int arr2[100], int LengthArray)
+{
+	//copy arr1 to arr2
+	for (int i = 0; i < LengthArray; i++)
+		arr2[i] = arr1[i];
+
+}
+enum enPrimeNotPrime { Prime = 1, NotPrime = 2 };
+enPrimeNotPrime CheckPrimeNumber(int num)
+{
+	for (int i = 2; i < num; i++)
+	{
+		if (num % i == 0)
+		{
+			return NotPrime;
+		}
+	}
+	return Prime;
+}
+void GetPrimeNumbers(int arr[100], int lenthArray)
+{
+
+	for(int i = 0; i < lenthArray; i++)
+	{
+		if (CheckPrimeNumber(arr[i]) == enPrimeNotPrime::Prime)
+		{
+			cout << arr[i] << " ";
+		}
+	}
+
+}
+void GetPrimeNumbers(int arr1[100], int arr2[100], int LengthArray ,int& LengthArray2)
+{
+	int counter = 0;
+	LengthArray2=0;
+	for (int i = 0;i < LengthArray;i++)
+	{
+		if(CheckPrimeNumber(arr1[i]) == enPrimeNotPrime::Prime)
+		{
+			arr2[counter] = arr1[i];
+			counter++;
+		}
+	}
+	LengthArray2 = --counter;
+}
+
 int main()
 {
 	srand(time(NULL));
 
-	int arr[100]; int LengthArray; int checkNumber;
 
-	ReadArray(arr, LengthArray);
-	printArray(arr, LengthArray);
-	checkNumber = ReadPostiveNumber("Enter number of array you want to check how many time it repeated: ");
-	cout << "Number " << checkNumber << " repeated " << timeReapeted(arr, LengthArray, checkNumber) << " times\n";
+	int arr1[100]; int LengthArray; int checkNumber; int arr2[100]; int LengthArray2;
+
+	printRandomArray(arr1, LengthArray);
+	GetPrimeNumbers(arr1, arr2, LengthArray , LengthArray2);
+	cout << "\n prime Numbers \n";
+	printArray(arr2, LengthArray2);
+
+	/*int arr1[100]; int LengthArray; int checkNumber; int arr2[100];
+
+	printRandomArray(arr1, LengthArray);
+	printCopyFromPrintRandomArray(arr1, arr2, LengthArray);
+	cout<< "\n copy from print random array \n";
+	printArray(arr2, LengthArray);*/
+	
+
+
+	//cout << "Max number in array is : " << GetMaxNumberOfArray(arr, LengthArray) << "\n";
+	//cout << "Min number in array is : " << GetMinNumberOfArray(arr, LengthArray) << "\n";
+	//cout << "Sum of array is : " << GetSumofArray(arr, LengthArray) << "\n";
+	//cout << "Average of array is : " << GetAverageofArray(arr, LengthArray) << "\n";
+
+	//ReadArray(arr, LengthArray);
+	//printArray(arr, LengthArray);
+	//checkNumber = ReadPostiveNumber("Enter number of array you want to check how many time it repeated: ");
+	//cout << "Number " << checkNumber << " repeated " << timeReapeted(arr, LengthArray, checkNumber) << " times\n";
 
 	//ReadNumberOfArrayEntryByUser();
 
