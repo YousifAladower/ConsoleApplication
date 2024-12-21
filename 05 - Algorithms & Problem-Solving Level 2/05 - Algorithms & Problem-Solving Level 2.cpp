@@ -448,18 +448,69 @@ void ShuffleArray(int arr1[100], int LengthArray)
 	}
 
 }
+void CopyArrayByReverse(int arr1[100], int arr2[100], int LengthArray)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		arr2[i] = arr1[LengthArray - i - 1];
+	}
+}
+
+void GenerateArray(int arr[100], int& LengthArray)
+{
+	cout << "Enter number of array entry: \n";
+	cin >> LengthArray;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		arr[i] = i;
+		cout << arr[i] <<"";
+	}
+	cout << endl;
+}
+void GenerateKeyInArray(int arr[100], int LengthArray)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		cout << arr[i] << " ::";
+		cout << GeneratKey(LengthArray) << "\n";
+	}
+	cout << endl;
+	
+}
+
 int main()
 {
 	srand(time(NULL));
 
 	int arr1[100] , LengthArray, checkNumber, arr2[100], LengthArray2 , arr3[100];
 
-	FillArrayFrom1ToN(arr1, LengthArray);
-	cout<<"oraginal array \n";
-	printArray(arr1, LengthArray);
-	ShuffleArray(arr1, LengthArray);
-	cout<< "\n Shuffle of arrays \n";
-	printArray(arr1, LengthArray);
+	GenerateArray(arr1, LengthArray);
+	cout << "\n Copy Array of Reverse \n";
+	GenerateKeyInArray(arr1,LengthArray);
+
+
+
+
+
+	//int arr1[100], LengthArray, checkNumber, arr2[100], LengthArray2, arr3[100];
+
+	//printRandomArray(arr1, LengthArray);
+	//CopyArrayByReverse(arr1, arr2, LengthArray);
+
+	//cout << "\n Copy Array of Reverse \n";
+	//printArray(arr2, LengthArray);
+
+
+
+	//int arr1[100], LengthArray, checkNumber, arr2[100], LengthArray2, arr3[100];
+
+	//FillArrayFrom1ToN(arr1, LengthArray);
+	//cout << "oraginal array \n";
+	//printArray(arr1, LengthArray);
+	//ShuffleArray(arr1, LengthArray);
+	//cout << "\n Shuffle of arrays \n";
+	//printArray(arr1, LengthArray);
+
 
 
 
