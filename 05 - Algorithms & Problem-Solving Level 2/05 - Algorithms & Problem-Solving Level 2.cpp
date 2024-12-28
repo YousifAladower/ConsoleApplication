@@ -503,10 +503,10 @@ void GetMultipleFrom1to10(int from, int to)
 	}
 }
 
-void AddElementToArray(int number, int arr[100], int& LengthArray)
+void AddElementToArray(int number, int arr2[100], int& LengthArray)
 {
 	LengthArray++;
-	arr[LengthArray - 1] = number;
+	arr2[LengthArray - 1] = number;
 }
 void InputUserInArray(int arr[100], int& lengthArray)
 {
@@ -518,16 +518,115 @@ void InputUserInArray(int arr[100], int& lengthArray)
 		cin >> AddMore;
 	} while (AddMore);
 }
+void GetRandomArray(int arr1[100], int arr2[100],int& LengthArray ,int& lengthArray2)
+{
+	cout << "Enter number of array entry: \n";
+	cin >> LengthArray;
+	int randomNumber = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		randomNumber = rand() % 100 + 1;
+		AddElementToArray(randomNumber, arr2, lengthArray2);
+		arr1[i] = randomNumber;
+		
+		cout << arr1[i] << " ";
+	}
 
+	cout << endl;
+}
+
+void GetRandomArrayWithOdd(int arr1[100], int arr2[100], int& LengthArray, int& lengthArray2)
+{
+	cout << "Enter number of array entry: \n";
+	cin >> LengthArray;
+	int randomNumber = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		randomNumber = rand() % 100 + 1;
+		arr1[i] = randomNumber;
+		if(arr1[i] %2!=0)
+		AddElementToArray(arr1[i], arr2, lengthArray2);
+		cout << arr1[i] << " ";
+	}
+
+	cout << endl;
+}
+
+void GetRandomArrayWithPrime(int arr1[100], int arr2[100], int& LengthArray, int& lengthArray2)
+{
+	cout << "Enter number of array entry: \n";
+	cin >> LengthArray;
+	int randomNumber = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		randomNumber = rand() % 100 + 1;
+		arr1[i] = randomNumber;
+     if (CheckPrimeNumber(arr1[i]) == enPrimeNotPrime::Prime)
+			AddElementToArray(arr1[i], arr2, lengthArray2);
+		cout << arr1[i] << " ";
+	}
+
+	cout << endl;
+}
+void AddElementToArrayWithCheckIfExist(int number, int arr2[100], int& LengthArray)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		if (arr2[i] == number)
+			return;
+	}
+	LengthArray++;
+	arr2[LengthArray - 1] = number;
+}
+void GetDistinctArray(int arr1[100], int arr2[100], int& LengthArray, int& lengthArray2)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		AddElementToArrayWithCheckIfExist(arr1[i], arr2, lengthArray2);
+		cout << arr1[i] << " ";
+	}
+
+}
+
+void CheckArraypalindrome(int arr1[100], int LengthArray)
+{
+	for (int i = 0; i < LengthArray / 2; i++)
+	{
+		if (arr1[i] != arr1[LengthArray - i - 1])
+		{
+			cout << "not palindrome";
+			return;
+		}
+	}
+	cout << "palindrome";
+}
 int main()
 {
 	srand(time(NULL));
 
 
+	int arr1[10] = {1,2,3,4,2,2,1}; int LengthArray = 7;
+	CheckArraypalindrome(arr1, LengthArray);
 
-	int arr1[100], LengthArray=0;
-    InputUserInArray(arr1, LengthArray);
-	printArray(arr1, LengthArray);
+	
+
+	//int arr1[10] = { 10,10,10,50,50,70,70,9,9,9 }; int LengthArray = 10;
+ //       int arr2[100]; int lengthArray2 = 0;
+
+	//	GetDistinctArray(arr1, arr2, LengthArray, lengthArray2);
+	//cout << "\n array2 \n";
+	//printArray(arr2, lengthArray2);
+
+
+	/*int arr1[100]; int LengthArray; int arr2[100]; int lengthArray2 = 0;
+
+	GetRandomArrayWithPrime(arr1, arr2, LengthArray , lengthArray2);
+	cout<< "\n array2 \n";
+	printArray(arr2, lengthArray2);*/
+
+	//int arr1[100], LengthArray=0;
+ //   InputUserInArray(arr1, LengthArray);
+	//printArray(arr1, LengthArray);
 
 	//GetMultipleFrom1to10(1, 10);
 
