@@ -276,6 +276,8 @@ void ReadArray(int arr[100], int& LengthArray)
 }
 void printArray(int arr[100], int LengthArray) {
 
+	cout << "array length :" << LengthArray;
+	cout << "\n";
 	for (int i = 0; i < LengthArray; i++)
 	{
 		cout << arr[i] << " ";
@@ -477,16 +479,64 @@ void GenerateKeyInArray(int arr[100], int LengthArray)
 	cout << endl;
 	
 }
+void GetMultipleFrom1to10(int from, int to)
+{
+	for (int i = from; i <= to; i++)
+	{
+		cout << i << " ";
+	}
+	cout<<"\n";
+	for (int i = from; i <= to; i++)
+	{
+		cout <<  "--";
+	}
+	cout << "\n";
+	for (int i = from; i <= to; i++)
+	{
+		cout<<i<<" | ";
+		for (int j = from; j <= to; j++)
+		{
+			
+			cout << i * j << " ";
+		}
+		cout << "\n";
+	}
+}
+
+void AddElementToArray(int number, int arr[100], int& LengthArray)
+{
+	LengthArray++;
+	arr[LengthArray - 1] = number;
+}
+void InputUserInArray(int arr[100], int& lengthArray)
+{
+	bool AddMore = true;
+	do {
+		
+		AddElementToArray(ReadPostiveNumber("please enter positive number\n"), arr, lengthArray);
+		cout << "Do you want to add more numbers:[0]No [1]Yes : \n";
+		cin >> AddMore;
+	} while (AddMore);
+}
 
 int main()
 {
 	srand(time(NULL));
 
-	int arr1[100] , LengthArray, checkNumber, arr2[100], LengthArray2 , arr3[100];
+
+
+	int arr1[100], LengthArray=0;
+    InputUserInArray(arr1, LengthArray);
+	printArray(arr1, LengthArray);
+
+	//GetMultipleFrom1to10(1, 10);
+
+
+	/*int arr1[100] , LengthArray, checkNumber, arr2[100], LengthArray2 , arr3[100];
 
 	GenerateArray(arr1, LengthArray);
 	cout << "\n Copy Array of Reverse \n";
-	GenerateKeyInArray(arr1,LengthArray);
+	GenerateKeyInArray(arr1,LengthArray);*/
 
 
 
