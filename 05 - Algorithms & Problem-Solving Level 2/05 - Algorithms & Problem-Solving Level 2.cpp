@@ -600,6 +600,18 @@ void CheckArraypalindrome(int arr1[100], int LengthArray)
 	}
 	cout << "palindrome";
 }
+void CheckArraypalindrome2(int arr1[100], int LengthArray)
+{
+	for (int i = 0; i < LengthArray / 2; i++)
+	{
+		if (arr1[i] != arr1[LengthArray - i - 1])
+		{
+			cout << "not palindrome";
+			return;
+		}
+	}
+	cout << "palindrome";
+}
 int main()
 {
 	srand(time(NULL));
