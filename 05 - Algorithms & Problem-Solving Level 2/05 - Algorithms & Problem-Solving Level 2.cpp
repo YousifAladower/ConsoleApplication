@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 
@@ -534,6 +535,21 @@ void GetRandomArray(int arr1[100], int arr2[100],int& LengthArray ,int& lengthAr
 
 	cout << endl;
 }
+void GetRandomArray(int arr1[100],  int& LengthArray)
+{
+	cout << "Enter number of array entry: \n";
+	cin >> LengthArray;
+	int randomNumber = 0;
+	for (int i = 0; i < LengthArray; i++)
+	{
+		randomNumber = rand() % 100 + 1;
+		arr1[i] = randomNumber;
+
+		cout << arr1[i] << " ";
+	}
+
+	cout << endl;
+}
 
 void GetRandomArrayWithOdd(int arr1[100], int arr2[100], int& LengthArray, int& lengthArray2)
 {
@@ -612,13 +628,112 @@ void CheckArraypalindrome2(int arr1[100], int LengthArray)
 	}
 	cout << "palindrome";
 }
+void GetOddNumberOfArray(int arr1[100], int& LengthArray)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		if (arr1[i] % 2 != 0)
+		{
+			cout << arr1[i] << " ";
+		}
+	}
+
+}
+int GetcoutNumberOfEvenNumbersInArray(int arr1[100], int& LengthArray)
+{
+	int counter = 0;
+	for(int i=0;i<LengthArray;i++)
+	{
+		if (arr1[i] % 2 == 0)
+		{
+			counter++;
+		}
+	}
+	return counter;
+}
+void GetRandomArrayPostiveAndNegtiveNumbers(int arr1[100], int& LengthArray)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		arr1[i] = RandomNumber(-100, 100);
+		cout << arr1[i] << " ";
+	}
+}
+void GetPostiveNumbers(int arr1[100], int& LengthArray)
+{
+	for (int i = 0; i < LengthArray; i++)
+	{
+		if (arr1[i] > 0)
+		{
+			cout << arr1[i] << " ";
+		}
+	}
+}
+
+void GetAbsNumber(int number)
+{
+	if (number < 0)
+	{
+		cout << -number;
+	}
+	else
+	{
+		cout << number;
+	}
+}
+//make function as round function 
+void GetRoundNumber(float number)
+{
+	int num = number;
+	if (number - num >= 0.5)
+	{
+		cout << num + 1;
+	}
+	else
+	{
+		cout << num;
+	}
+
+
+
+}
+
+//void GetRoundNumber(float number)
+//{
+//	string str = to_string(number);
+//	str = str.substr(0, str.find(".") + 3);
+//	cout << str;
+//
+//}
 int main()
 {
 	srand(time(NULL));
 
+	float number;
+	cout<<"please enter number\n";
+	cin >> number;
 
-	int arr1[10] = {1,2,3,4,2,2,1}; int LengthArray = 7;
-	CheckArraypalindrome(arr1, LengthArray);
+	GetRoundNumber(number);
+	//GetAbsNumber(number);
+	//cout<<abs(number);
+
+	/*int arr1[100]; int LengthArray; 
+	GetRandomArray(arr1, LengthArray);
+	GetRandomArrayPostiveAndNegtiveNumbers(arr1, LengthArray);
+	cout<<"postive Numbers"<<endl;
+    GetPostiveNumbers(arr1, LengthArray);*/
+
+	/*cout<<"\n";
+	cout<<"Odd Numbers"<<endl;
+	GetOddNumberOfArray(arr1, LengthArray);*/
+
+	/*cout << "\n";
+	cout<<"Even Numbers	"<<endl;
+	cout << GetcoutNumberOfEvenNumbersInArray(arr1, LengthArray);*/
+
+
+	//int arr1[10] = {1,2,3,4,2,2,1}; int LengthArray = 7;
+	//CheckArraypalindrome(arr1, LengthArray);
 
 	
 
