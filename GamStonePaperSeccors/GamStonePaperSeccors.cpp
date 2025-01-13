@@ -95,6 +95,7 @@ void StartGam()
 		else if (countwinYou < countwinComputer)
 		{
 			system("color 0C");
+			cout<<"\a";
 		}
 		else
 		{

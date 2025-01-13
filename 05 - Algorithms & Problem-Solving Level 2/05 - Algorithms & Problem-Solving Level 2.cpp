@@ -698,22 +698,46 @@ void GetRoundNumber(float number)
 
 }
 
-//void GetRoundNumber(float number)
-//{
-//	string str = to_string(number);
-//	str = str.substr(0, str.find(".") + 3);
-//	cout << str;
-//
-//}
+void PrintInvertedLetterPattern(int Number)
+{
+	cout << "\n";
+	for (int i = 65 + Number - 1; i >= 65; i--)
+	{
+		for (int j = i; j <= Number - (65 + Number - 1); j++)
+		{
+			cout << char(i);
+		}
+		cout << "\n";
+	}
+}
+void PrintNumberPattern(int Number)
+{
+	cout << "\n";
+	for (int i = 1; i <= Number; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			cout << i;
+		}
+		cout << "\n";
+	}
+}
 int main()
 {
 	srand(time(NULL));
 
-	float number;
-	cout<<"please enter number\n";
-	cin >> number;
+	int Number = 0;
 
-	GetRoundNumber(number);
+	cout << "Enter number: \n";
+	cin >> Number;
+	//PrintNumberPattern(Number);
+	PrintInvertedLetterPattern(Number);
+
+	/*float number;
+	cout<<"please enter number\n";
+	cin >> number;*/
+
+	//GetRoundNumber(number);
 	//GetAbsNumber(number);
 	//cout<<abs(number);
 
