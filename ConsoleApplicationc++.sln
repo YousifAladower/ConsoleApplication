@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GamStonePaperSeccors", "Gam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleAppLib", "ConsoleAppLib\ConsoleAppLib.vcxproj", "{8DCA2243-9813-475E-8783-E0108DEBAE1F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c++level2", "c++level2\c++level2.vcxproj", "{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{8DCA2243-9813-475E-8783-E0108DEBAE1F}.Release|x64.Build.0 = Release|x64
 		{8DCA2243-9813-475E-8783-E0108DEBAE1F}.Release|x86.ActiveCfg = Release|Win32
 		{8DCA2243-9813-475E-8783-E0108DEBAE1F}.Release|x86.Build.0 = Release|Win32
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Debug|x64.ActiveCfg = Debug|x64
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Debug|x64.Build.0 = Debug|x64
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Debug|x86.ActiveCfg = Debug|Win32
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Debug|x86.Build.0 = Debug|Win32
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Release|x64.ActiveCfg = Release|x64
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Release|x64.Build.0 = Release|x64
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Release|x86.ActiveCfg = Release|Win32
+		{FF51AE3E-E5C3-41ED-807A-8F68AF1E2066}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
