@@ -57,6 +57,7 @@ void PrintStudent(vector <Student>& students)
 		cout << "ID: " << student.id << endl;
 		cout << "Name: " << student.name << endl;
 	    cout<< "GPA: " << student.age << endl;
+		cout << "------------------------" << endl;
 	}
 	cout << endl;
 }
