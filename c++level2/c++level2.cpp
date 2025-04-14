@@ -73,14 +73,58 @@ void swap(int* a, int* b)
 	*a = *b;
 	*b = temp;
 }
+struct Emp
+{
+	int id;
+	string name;
+	float salary;
+
+};
 int main()
 {
 	//Pointer and Reference
-	int a = 10;
-	int b = 20;
-	cout << "Before swap: a = " << a << ", b = " << b << endl;
-	swap(a, b);
-	cout << "After swap: a = " << a << ", b = " << b << endl;
+	Emp emp, * emp1;
+	emp.id = 1;
+	emp.name = "Ali";
+	emp.salary = 1000;
+	cout << "before change" << endl;
+	cout << "ID: " << emp.id << endl;
+	cout << "Name: " << emp.name << endl;
+	cout << "Salary: " << emp.salary << endl;
+	
+	emp1 = &emp;
+	cout << "after using Pointer" << endl;
+	emp1->id = 1;
+	emp1->name = "Ali";
+	emp1->salary = 1000;
+	cout << "ID: " << emp1->id << endl;
+	cout << "Name: " << emp1->name << endl;
+	cout << "Salary: " << emp1->salary << endl;
+
+
+
+
+
+
+	/*int arr[5] = { 1,2,3,4,5 };
+	int* p = arr;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "arr[" << i << "] = " << arr[i] << endl;
+		cout << "p[" << i << "] = " << *(p + i) << endl;
+	}*/
+
+
+
+
+
+
+
+	//int a = 10;
+	//int b = 20;
+	//cout << "Before swap: a = " << a << ", b = " << b << endl;
+	//swap(a, b);
+	//cout << "After swap: a = " << a << ", b = " << b << endl;
 
 
 
