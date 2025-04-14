@@ -61,14 +61,37 @@ void PrintStudent(vector <Student>& students)
 	}
 	cout << endl;
 }
+//void swap(int& a, int& b)
+//{
+//	int temp = a;
+//	a = b;
+//	b = temp;
+//}
+void swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
 int main()
 {
-
+	//Pointer and Reference
 	int a = 10;
+	int b = 20;
+	cout << "Before swap: a = " << a << ", b = " << b << endl;
+	swap(a, b);
+	cout << "After swap: a = " << a << ", b = " << b << endl;
+
+
+
+
+
+
+	/*int a = 10;
 	int *b = &a;
 	cout << "a = " << a << endl;
 	cout << "b = " << b << endl;
-	cout << "*b = " << *b << endl;
+	cout << "*b = " << *b << endl;*/
 
 	//Vector
 	/*vector<Student> students;
