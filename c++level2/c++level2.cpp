@@ -64,10 +64,16 @@ void PrintStudent(vector <Student>& students)
 int main()
 {
 
+	int a = 10;
+	int *b = &a;
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	cout << "*b = " << *b << endl;
+
 	//Vector
-	vector<Student> students;
+	/*vector<Student> students;
 	ReadStudent(students);
-	PrintStudent(students);
+	PrintStudent(students);*/
 
 
 	/*vector<int> numbers;
