@@ -83,23 +83,47 @@ struct Emp
 int main()
 {
 	//Pointer and Reference
-	Emp emp, * emp1;
-	emp.id = 1;
-	emp.name = "Ali";
-	emp.salary = 1000;
-	cout << "before change" << endl;
-	cout << "ID: " << emp.id << endl;
-	cout << "Name: " << emp.name << endl;
-	cout << "Salary: " << emp.salary << endl;
-	
-	emp1 = &emp;
-	cout << "after using Pointer" << endl;
-	emp1->id = 1;
-	emp1->name = "Ali";
-	emp1->salary = 1000;
-	cout << "ID: " << emp1->id << endl;
-	cout << "Name: " << emp1->name << endl;
-	cout << "Salary: " << emp1->salary << endl;
+	int num;
+	cout << "Enter a number of grades students: ";
+	cin >> num;
+
+	float* p;
+		p = new float[num];
+	for (int i = 0; i < num; i++)
+	{
+		cout << "Enter grade of student " << i + 1 << ": ";
+		cin >> * (p+i);
+	}
+	cout << "The grades of students are: " << endl;
+	for (int i = 0; i < num; i++)
+	{
+		cout << "Grade of student " << i + 1 << ": " << p[i] << endl;
+	}
+	delete[] p;
+
+
+ 
+
+
+
+
+	//Emp emp, * emp1;
+	//emp.id = 1;
+	//emp.name = "Ali";
+	//emp.salary = 1000;
+	//cout << "before change" << endl;
+	//cout << "ID: " << emp.id << endl;
+	//cout << "Name: " << emp.name << endl;
+	//cout << "Salary: " << emp.salary << endl;
+	//
+	//emp1 = &emp;
+	//cout << "after using Pointer" << endl;
+	//emp1->id = 1;
+	//emp1->name = "Ali";
+	//emp1->salary = 1000;
+	//cout << "ID: " << emp1->id << endl;
+	//cout << "Name: " << emp1->name << endl;
+	//cout << "Salary: " << emp1->salary << endl;
 
 
 
