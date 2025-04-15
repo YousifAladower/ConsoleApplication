@@ -68,6 +68,18 @@ void PrintMidelColumn(int arr[3][3], int rows, int cols)
 		printf("%0*d   ", 2, arr[i][middleCol]);
 	}
 }
+void PrintSumAllMatrix(int arr[3][3], int rows, int cols)
+{
+	int sum = 0;
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	cout << "Sum of all matrix is: " << sum << endl;
+}
 int main()
 {
 	int arr[3][3];
@@ -86,6 +98,8 @@ int main()
 	PrintMidelRow(arr, 3, 3);
 	cout << "\nMiddle column of the first matrix:\n";
 	PrintMidelColumn(arr, 3, 3);
+	cout << "\nSum of all elements in the first matrix:\n";
+	PrintSumAllMatrix(arr, 3, 3);
 
 	/*int arr[3][3];
 	FillMatrix(arr, 3, 3);
