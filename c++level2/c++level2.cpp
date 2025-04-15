@@ -6,11 +6,11 @@
 #include <vector>	
 using namespace std;
 
-void ReadNumber(vector <int> & number)
+void ReadNumber(vector <int>& number)
 {
 	char answer = 'y';
 	int i = 0;
-	while (answer == 'y'|| answer == 'Y')
+	while (answer == 'y' || answer == 'Y')
 	{
 		cout << "Enter number ! :";
 		cin >> i;
@@ -19,7 +19,7 @@ void ReadNumber(vector <int> & number)
 		cin >> answer;
 	}
 }
-void PrintNumber(vector <int> & numbers)
+void PrintNumber(vector <int>& numbers)
 {
 	for (int number : numbers)
 	{
@@ -52,11 +52,11 @@ void ReadStudent(vector <Student>& students)
 }
 void PrintStudent(vector <Student>& students)
 {
-	for (Student & student : students)
+	for (Student& student : students)
 	{
 		cout << "ID: " << student.id << endl;
 		cout << "Name: " << student.name << endl;
-	    cout<< "GPA: " << student.age << endl;
+		cout << "GPA: " << student.age << endl;
 		cout << "------------------------" << endl;
 	}
 	cout << endl;
@@ -82,8 +82,44 @@ struct Emp
 };
 int main()
 {
+	//String Object 
+
+	string S1 = "My Name is Mohammed Abu-Hadhoud, I LoveProgramming.";
+	//Prints the length of the string
+	cout << S1.length() << endl;
+	//Returns the letter at position 3
+	cout << S1.at(3) << endl;
+	//Adds @ProgrammingAdvices to the end of string
+	S1.append(" @ProgrammingAdvices");
+	cout << S1 << endl;
+	//inserts Ali at position 7
+	S1.insert(7, " Ali ");
+	cout << S1 << endl;
+	//Prints all the next 8 letters from position 16.
+	cout << S1.substr(16, 8) << endl;
+	//Adds one character to the end of the string
+	S1.push_back('X');
+	cout << S1 << endl;
+	//Removes one character from the end of the string
+	S1.pop_back();
+	cout << S1 << endl;
+	//Finds Ali in the string
+	cout << S1.find("Ali") << endl;
+	//Finds ali in the string
+	cout << S1.find("ali") << endl;
+	if (S1.find("ali") == S1.npos)
+	{
+		cout << "ali is not found";
+	}
+	//clears all string letters.
+	S1.clear();
+	cout << S1 << endl;
+
+
+
+
 	//Pointer and Reference
-	int num;
+	/*int num;
 	cout << "Enter a number of grades students: ";
 	cin >> num;
 
@@ -99,10 +135,10 @@ int main()
 	{
 		cout << "Grade of student " << i + 1 << ": " << p[i] << endl;
 	}
-	delete[] p;
+	delete[] p;*/
 
 
- 
+
 
 
 
@@ -205,21 +241,21 @@ int main()
 
 
 
-   /* int d = 2;
-	printf("int printf ==>  %d", d);
-	printf("int printf ==>  %0*d",4, d);
-	printf("\n");
+	/* int d = 2;
+	 printf("int printf ==>  %d", d);
+	 printf("int printf ==>  %0*d",4, d);
+	 printf("\n");
 
-	char c = 'A';
-	float f = 2.5;
-	float ff = 2.555, ff2 = 3.253;
-	printf("float printf ==>  %f", f);
-	printf("\n");
-	printf("float printf ==>  %.*f",2, f);
-	printf("float printf ==>  %.*f",3, f);
-	printf("\n");
-	printf("float printf ==>  %.3f : and %.5f", ff, ff2);*/
+	 char c = 'A';
+	 float f = 2.5;
+	 float ff = 2.555, ff2 = 3.253;
+	 printf("float printf ==>  %f", f);
+	 printf("\n");
+	 printf("float printf ==>  %.*f",2, f);
+	 printf("float printf ==>  %.*f",3, f);
+	 printf("\n");
+	 printf("float printf ==>  %.3f : and %.5f", ff, ff2);*/
 
-    
+
 }
 
