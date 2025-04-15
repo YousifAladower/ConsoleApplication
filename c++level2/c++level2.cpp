@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdio>
 #include <vector>	
+#include <fstream>
+#include <string>
 using namespace std;
 
 void ReadNumber(vector <int>& number)
@@ -80,27 +82,59 @@ struct Emp
 	float salary;
 
 };
+void LoadDataFromFileToVector(string FileName, vector <string>&
+	vFileContent)
+{
+	fstream MyFile;
+	MyFile.open(FileName, ios::in);//read Mode
+	if (MyFile.is_open())
+	{
+		string Line;
+		while (getline(MyFile, Line))
+		{
+			vFileContent.push_back(Line);
+		}
+		MyFile.close();
+	}
+}
 int main()
 {
-	//String Object 
-	char x;
-	char w;
-	x = toupper('a');
-	w = tolower('A');
-	cout << "converting a to A: " << x << endl;
-	cout << "converting A to a: " << w << endl;
-	// Digits (A to Z)
-	// returns zero if not, and non zero of yes
-	cout << "isupper('A') " << isupper('A') << endl;
-	// lower case (a to z)
-	// returns zero if not, and non zero of yes
-	cout << "islower('A') " << islower('A') << endl;
-	// Digits (0 to 9)
-	// returns zero if not, and non zero of yes
-	cout << "isdigit('A') " << isdigit('A') << endl;
-	// punctuation characters are !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-	// returns zero if not, and non zero of yes
-	cout << "ispunct('A') " << ispunct('A') << endl;
+	//Handle with Files
+	 vector <string> vFileContenet;
+	LoadDataFromFileToVector("MyFile.txt", vFileContenet);
+	for (string& Line : vFileContenet)
+	{
+		cout << Line << endl;
+	}
+	//fstream MyFile;
+	//MyFile.open("MyFile.txt", ios::out);//Write Mode
+	//if (MyFile.is_open())
+	//{
+	//	MyFile << "Hi, this is the first line\n";
+	//	MyFile << "Hi, this is the second line\n";
+	//	MyFile << "Hi, this is the third line\n";
+	//	MyFile.close();
+	//}
+
+	////String Object 
+	//char x;
+	//char w;
+	//x = toupper('a');
+	//w = tolower('A');
+	//cout << "converting a to A: " << x << endl;
+	//cout << "converting A to a: " << w << endl;
+	//// Digits (A to Z)
+	//// returns zero if not, and non zero of yes
+	//cout << "isupper('A') " << isupper('A') << endl;
+	//// lower case (a to z)
+	//// returns zero if not, and non zero of yes
+	//cout << "islower('A') " << islower('A') << endl;
+	//// Digits (0 to 9)
+	//// returns zero if not, and non zero of yes
+	//cout << "isdigit('A') " << isdigit('A') << endl;
+	//// punctuation characters are !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+	//// returns zero if not, and non zero of yes
+	//cout << "ispunct('A') " << ispunct('A') << endl;
 
 	//string S1 = "My Name is Mohammed Abu-Hadhoud, I LoveProgramming.";
 	////Prints the length of the string
