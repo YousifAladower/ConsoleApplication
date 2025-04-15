@@ -82,8 +82,7 @@ struct Emp
 	float salary;
 
 };
-void LoadDataFromFileToVector(string FileName, vector <string>&
-	vFileContent)
+void LoadDataFromFileToVector(string FileName, vector <string>& vFileContent)
 {
 	fstream MyFile;
 	MyFile.open(FileName, ios::in);//read Mode
@@ -97,15 +96,95 @@ void LoadDataFromFileToVector(string FileName, vector <string>&
 		MyFile.close();
 	}
 }
+void SaveVectorToFile(string FileName, vector <string> vFileContent)
+{
+	fstream MyFile;
+	MyFile.open("MyFile.txt", ios::out);
+	if (MyFile.is_open())
+	{
+		for (string& Line : vFileContent)
+		{
+			if (Line != "")
+			{
+				MyFile << Line << endl;
+			}
+		}
+		MyFile.close();
+	}
+}
+void DeleteRecordFromFile(string FileName, string Record)
+{
+	vector <string> vFileContent;
+	LoadDataFromFileToVector(FileName, vFileContent);
+	for (string& Line : vFileContent)
+	{
+		if (Line == Record)
+		{
+			Line = "";
+		}
+	}
+	SaveVectorToFile(FileName, vFileContent);
+}
+void PrintFileContent(string FileName)
+{
+	fstream MyFile;
+	MyFile.open(FileName, ios::in);//read Mode
+	if (MyFile.is_open())
+	{
+		string Line;
+		while (getline(MyFile, Line))
+		{
+			cout << Line << endl;
+		}
+		MyFile.close();
+	}
+}
+void UpdateRecordInFile(string FileName, string Record, string UpdateTo)
+{
+	vector <string> vFileContent;
+	LoadDataFromFileToVector(FileName, vFileContent);
+	for (string& Line : vFileContent)
+	{
+		if (Line == Record)
+		{
+			Line = UpdateTo;
+		}
+	}
+	SaveVectorToFile(FileName, vFileContent);
+}
+
 int main()
 {
 	//Handle with Files
-	 vector <string> vFileContenet;
+	cout << "File Content Before update.\n";
+	PrintFileContent("MyFile.txt");
+	UpdateRecordInFile("MyFile.txt", "Ali", "Omar");
+	cout << "\n\nFile Content After update.\n";
+	PrintFileContent("MyFile.txt");
+
+	//cout << "File Content Before Delete.\n";
+	//PrintFileContent("MyFile.txt");
+	//DeleteRecordFromFile("MyFile.txt", "Ali");
+	//cout << "\n\nFile Content After Delete.\n";
+	//PrintFileContent("MyFile.txt");
+
+	//save vetor to file
+	/*vector <string> vFileContenet{"Ali","Shadi","Maher","Fadi","Lama" };
+	SaveVectorToFile("MyFile.txt", vFileContenet);*/
+
+
+
+
+
+	//print from file
+	/* vector <string> vFileContenet;
 	LoadDataFromFileToVector("MyFile.txt", vFileContenet);
 	for (string& Line : vFileContenet)
 	{
 		cout << Line << endl;
-	}
+	}*/
+
+
 	//fstream MyFile;
 	//MyFile.open("MyFile.txt", ios::out);//Write Mode
 	//if (MyFile.is_open())
