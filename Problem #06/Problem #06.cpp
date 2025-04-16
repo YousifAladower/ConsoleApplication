@@ -293,26 +293,34 @@ string TrimeRightString(string S1)
 }
 string TrimeString(string S1)
 {
-	int i = 0;
-	while (S1[i] == ' ')
+ return	TrimeLeftString(TrimeRightString(S1));
+}
+
+string JoinString(vector<string> vString, string Delim)
+{
+	string result;
+	for (int i = 0; i < vString.size(); i++)
 	{
-		i++;
+		result += vString[i];
+		if (i != vString.size() - 1)
+		{
+			result += Delim;
+		}
 	}
-	S1 = S1.substr(i);
-	i = S1.length() - 1;
-	while (S1[i] == ' ')
-	{
-		i--;
-	}
-	return S1.substr(0, i + 1);
+	return result;
 }
 
 int main()
 {
+	//Problem 39
+	vector <string> vString = { "Hello", "World", "How", "Are", "You" };
+	cout << JoinString(vString, ",") << endl;
+
+
 	//Problem 38
-	cout << TrimeLeftString(ReadString()) << endl;
+	/*cout << TrimeLeftString(ReadString()) << endl;
 	cout << TrimeRightString(ReadString()) << endl;
-	cout << TrimeString(ReadString()) << endl;
+	cout << TrimeString(ReadString()) << endl;*/
 
 
 	//problem36
