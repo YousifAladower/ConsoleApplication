@@ -121,7 +121,7 @@ bool IsNumberInMatrix(int arr[3][3], int rows, int cols, int number)
 	}
 	return false;
 }
-int MaxNumberInMatrix(int arr[3][3], int rows, int cols)
+int  MaxNumberInMatrix(int arr[3][3], int rows, int cols)
 {
 	int maxNum = arr[0][0];
 	for (int i = 0; i < rows; i++)
@@ -134,7 +134,7 @@ int MaxNumberInMatrix(int arr[3][3], int rows, int cols)
 	}
 	return maxNum;
 }
-int MinNumberInMatrix(int arr[3][3], int rows, int cols)
+int  MinNumberInMatrix(int arr[3][3], int rows, int cols)
 {
 	int minNum = arr[0][0];
 	for (int i = 0; i < rows; i++)
@@ -273,17 +273,56 @@ vector<string> SplitString(string S1, string Delim)
 	}
 	return vString;
 }
+string TrimeLeftString(string S1)
+{
+	int i = 0;
+	while (S1[i] == ' ')
+	{
+		i++;
+	}
+	return S1.substr(i);
+}
+string TrimeRightString(string S1)
+{
+	int i = S1.length() - 1;
+	while (S1[i] == ' ')
+	{
+		i--;
+	}
+	return S1.substr(0, i + 1);
+}
+string TrimeString(string S1)
+{
+	int i = 0;
+	while (S1[i] == ' ')
+	{
+		i++;
+	}
+	S1 = S1.substr(i);
+	i = S1.length() - 1;
+	while (S1[i] == ' ')
+	{
+		i--;
+	}
+	return S1.substr(0, i + 1);
+}
 
 int main()
 {
+	//Problem 38
+	cout << TrimeLeftString(ReadString()) << endl;
+	cout << TrimeRightString(ReadString()) << endl;
+	cout << TrimeString(ReadString()) << endl;
+
+
 	//problem36
-	vector <string> vstring;
+	/*vector <string> vstring;
 	vstring = SplitString("Hello World How Are You", " ");
 	cout << vstring.size() << endl;
 	for (string& s : vstring)
 	{
 		cout << s << endl;
-	}
+	}*/
 
 
 	//problem35
