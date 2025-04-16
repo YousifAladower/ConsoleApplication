@@ -94,10 +94,34 @@ bool IsIdentityMatrix(int arr[3][3], int rows, int cols)
 	}
 	return true;
 }
+bool IsSparseMatrix(int arr[3][3], int rows, int cols)
+{
+	int zeroCount = 0;
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			if (arr[i][j] == 0)
+				zeroCount++;
+		}
+	}
+	return zeroCount > (rows * cols) / 2;
+}
 int main()
 {
 	// Problem 12
-	int arr[3][3] = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+
+	int arr[3][3] = { { 12, 0, 0 }, { 23, 12, 12 }, { 0, 0, 1 } };
+	if (IsSparseMatrix(arr, 3, 3))
+	{
+		cout << "The matrix is a sparse matrix." << endl;
+	}
+	else
+	{
+		cout << "The matrix is not a sparse matrix." << endl;
+	}
+
+	/*int arr[3][3] = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
 	if (IsIdentityMatrix(arr, 3, 3))
 	{
 		cout << "The matrix is an identity matrix." << endl;
@@ -105,7 +129,7 @@ int main()
 	else
 	{
 		cout << "The matrix is not an identity matrix." << endl;
-	}
+	}*/
 
 
 	/*int arr[3][3];
