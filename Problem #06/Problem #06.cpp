@@ -157,10 +157,28 @@ bool IsPalindromMatrix(int arr[3][3], int rows, int cols)
 	}
 	return true;
 }
+void PrintFibonacciUsingLoop(int n)
+{
+	int a = 0, b = 1, c;
+	cout << a << " " << b << " ";
+	for (int i = 1; i < n; i++)
+	{
+		c = a + b;
+		cout << c << " ";
+		a = b;
+		b = c;
+	}
+	cout << endl;
+}
 int main()
 {
+	//Problem21
+	int n = 10;
+	cout << "Fibonacci series using loop: ";
+	PrintFibonacciUsingLoop(n);
+
 	//Problem20  Is palindrome array
-	int arr[3][3] = { { 1, 2, 1 }, { 5, 5, 5 }, { 7,5, 7 } };
+	/*int arr[3][3] = { { 1, 2, 1 }, { 5, 5, 5 }, { 7,5, 7 } };
 	PrintMatrix(arr, 3, 3);
 	if (IsPalindromMatrix(arr, 3, 3))
 	{
@@ -169,7 +187,7 @@ int main()
 	else
 	{
 		cout << "The matrix is not a palindrome matrix." << endl;
-	}
+	}*/
 
 
 	// Problem 12
