@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>	
 using namespace std;
 int GetRandomNumber(int min, int max)
 {
@@ -206,10 +207,96 @@ void PrintFirstLetterFormEveryWorld(string S1)
 	}
 	
 }
+char ReadChar()
+{
+	char ch;
+	cout << "Enter a character: ";
+	cin >> ch;
+	return ch;
+}
+char InvertLetterCaseChar(char a)
+{
+	return isupper(a)?tolower(a) : toupper(a);
+
+}
+
+void PrintEachWordSeparatedBySpace(string S1)
+{
+	for (int i = 0; i < S1.length(); i++)
+	{
+		if (S1[i] != ' ')
+		{
+			cout << S1[i];
+		}
+		else
+		{
+			cout << endl;
+		}
+	}
+}
+//vector <string> SplitString(const string& str, char delimiter)
+//{
+//	vector<string> result;
+//	string word;
+//	
+//	for (int i = 0; i < str.length(); i++)
+//	{
+//		if (str[i] != ' ')
+//		{
+//			word += str[i];
+//		}
+//		
+//			result.push_back(word);
+//			word.clear();	
+//	}
+//	return result;
+//}
+vector<string> SplitString(string S1, string Delim)
+{
+	vector<string> vString;
+	short pos = 0;
+	string sWord; // define a string variable
+	// use find() function to get the position of the delimiters
+	while ((pos = S1.find(Delim)) != std::string::npos)
+	{
+		sWord = S1.substr(0, pos); // store the word
+		if (sWord != "")
+		{
+			vString.push_back(sWord);
+		}
+		S1.erase(0, pos + Delim.length()); /* erase() until
+		positon and move to next word. */
+	}
+	if (S1 != "")
+	{
+		vString.push_back(S1); // it adds last word of the string.
+	}
+	return vString;
+}
+
 int main()
 {
+	//problem36
+	vector <string> vstring;
+	vstring = SplitString("Hello World How Are You", " ");
+	cout << vstring.size() << endl;
+	for (string& s : vstring)
+	{
+		cout << s << endl;
+	}
+
+
+	//problem35
+	//PrintEachWordSeparatedBySpace(ReadString());
+
+	//Problem 27
+	/*char c = ReadChar();
+	cout << "char after Invert" << endl;
+	cout << InvertLetterCaseChar(c);*/
+
+
 	//Problem23
-	PrintFirstLetterFormEveryWorld(ReadString());
+	//PrintFirstLetterFormEveryWorld(ReadString());
 
 
 
