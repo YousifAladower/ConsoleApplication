@@ -107,19 +107,87 @@ bool IsSparseMatrix(int arr[3][3], int rows, int cols)
 	}
 	return zeroCount > (rows * cols) / 2;
 }
+bool IsNumberInMatrix(int arr[3][3], int rows, int cols, int number)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			if (arr[i][j] == number)
+				return true;
+		}
+	}
+	return false;
+}
+int MaxNumberInMatrix(int arr[3][3], int rows, int cols)
+{
+	int maxNum = arr[0][0];
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			if (arr[i][j] > maxNum)
+				maxNum = arr[i][j];
+		}
+	}
+	return maxNum;
+}
+int MinNumberInMatrix(int arr[3][3], int rows, int cols)
+{
+	int minNum = arr[0][0];
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			if (arr[i][j] < minNum)
+				minNum = arr[i][j];
+		}
+	}
+	return minNum;
+}
+bool IsPalindromMatrix(int arr[3][3], int rows, int cols)
+{
+	for (short i = 0; i < rows; i++)
+	{
+		for (short j = 0; j < cols; j++)
+		{
+			if (arr[i][j] != arr[i][cols - 1 - j])
+				return false;
+		}
+	}
+	return true;
+}
 int main()
 {
-	// Problem 12
-
-	int arr[3][3] = { { 12, 0, 0 }, { 23, 12, 12 }, { 0, 0, 1 } };
-	if (IsSparseMatrix(arr, 3, 3))
+	//Problem20  Is palindrome array
+	int arr[3][3] = { { 1, 2, 1 }, { 5, 5, 5 }, { 7,5, 7 } };
+	PrintMatrix(arr, 3, 3);
+	if (IsPalindromMatrix(arr, 3, 3))
 	{
-		cout << "The matrix is a sparse matrix." << endl;
+		cout << "The matrix is a palindrome matrix." << endl;
 	}
 	else
 	{
-		cout << "The matrix is not a sparse matrix." << endl;
+		cout << "The matrix is not a palindrome matrix." << endl;
 	}
+
+
+	// Problem 12
+	/*int arr[3][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+	cout << "MaxNumberInMatrix \n" << endl;
+	cout << MaxNumberInMatrix(arr, 3, 3) << endl;
+	cout << "MinNumberInMatrix \n" << endl;
+	cout << MinNumberInMatrix(arr, 3, 3) << endl;*/
+
+	//int arr[3][3] = { { 12, 0, 0 }, { 23, 12, 12 }, { 0, 0, 1 } };
+	//if (IsSparseMatrix(arr, 3, 3))
+	//{
+	//	cout << "The matrix is a sparse matrix." << endl;
+	//}
+	//else
+	//{
+	//	cout << "The matrix is not a sparse matrix." << endl;
+	//}
 
 	/*int arr[3][3] = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
 	if (IsIdentityMatrix(arr, 3, 3))
