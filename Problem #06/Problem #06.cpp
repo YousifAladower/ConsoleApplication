@@ -273,6 +273,25 @@ vector<string> SplitString(string S1, string Delim)
 	}
 	return vString;
 }
+string SplitStringReverse(string S1, string Delim)
+{
+	vector<string> vString;
+	string sWord; // define a string variable
+	vString = SplitString(S1, Delim);
+	vector<string> ::iterator iter = vString.end();
+	while (iter != vString.begin())
+	{
+		iter--;
+		sWord += *iter;
+		if (iter != vString.begin()) // if not the last element
+		{
+			sWord += Delim;
+		}
+		
+	}
+	return sWord;
+	
+}
 string TrimeLeftString(string S1)
 {
 	int i = 0;
@@ -309,12 +328,55 @@ string JoinString(vector<string> vString, string Delim)
 	}
 	return result;
 }
+string JoinString(string  arryString[], int length, string Delim)
+{
+	string result;
+	for (int i = 0; i < length; i++)
+	{
+		result += arryString[i];
+		if (i != length - 1)
+		{
+			result += Delim;
+		}
+	}
+	return result;
+}
+
+//write comment to explane the function
+string ReplaceWord(string S1, string wordReplace, string toReplace)
+{
+	string result;
+	int pos = 0;
+	while ((pos = S1.find(wordReplace)) != std::string::npos)
+	{
+		result += S1.substr(0, pos);// store the word
+		result += toReplace;// add the word to replace
+		S1.erase(0, pos + wordReplace.length()); // erase() until 
+	}
+	result += S1; // add the last part of the string
+	return result; // return the result
+}
 
 int main()
 {
+	//Problem 42
+	string s = "Weclome to Yemen , Yemen is a beautiful country";
+	string wordReplace = "Yemen";
+	string toReplace = "USA";
+	cout << "string befor Replace:" << endl;
+	cout << s << endl;
+	cout << "string after Replace:" << endl;
+	cout << ReplaceWord(s, wordReplace, toReplace) << endl;
+
+
+	//Problem 41
+	//cout << SplitStringReverse(ReadString(), " ") << endl;
+
 	//Problem 39
-	vector <string> vString = { "Hello", "World", "How", "Are", "You" };
+	/*vector <string> vString = { "Hello", "World", "How", "Are", "You" };
+	string arryString[5] = { "Hello", "World", "How", "Are", "You" };
 	cout << JoinString(vString, ",") << endl;
+	cout << JoinString(arryString, 5, ",") << endl;*/
 
 
 	//Problem 38
