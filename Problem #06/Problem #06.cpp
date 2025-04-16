@@ -80,9 +80,35 @@ void PrintSumAllMatrix(int arr[3][3], int rows, int cols)
 	}
 	cout << "Sum of all matrix is: " << sum << endl;
 }
+bool IsIdentityMatrix(int arr[3][3], int rows, int cols)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			if (i == j && arr[i][j] != 1)
+				return false;
+			else if (i != j && arr[i][j] != 0)
+				return false;
+		}
+	}
+	return true;
+}
 int main()
 {
-	int arr[3][3];
+	// Problem 12
+	int arr[3][3] = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+	if (IsIdentityMatrix(arr, 3, 3))
+	{
+		cout << "The matrix is an identity matrix." << endl;
+	}
+	else
+	{
+		cout << "The matrix is not an identity matrix." << endl;
+	}
+
+
+	/*int arr[3][3];
 	int arr2[3][3];
 	int arrReslt[3][3];
 	FillMatrix(arr, 3, 3);
@@ -99,7 +125,7 @@ int main()
 	cout << "\nMiddle column of the first matrix:\n";
 	PrintMidelColumn(arr, 3, 3);
 	cout << "\nSum of all elements in the first matrix:\n";
-	PrintSumAllMatrix(arr, 3, 3);
+	PrintSumAllMatrix(arr, 3, 3);*/
 
 	/*int arr[3][3];
 	FillMatrix(arr, 3, 3);
