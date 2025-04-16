@@ -170,12 +170,35 @@ void PrintFibonacciUsingLoop(int n)
 	}
 	cout << endl;
 }
+void PrintFibonacciUsingRecourse(int number, int perv1,int perv2)
+{
+	int FedNumber = 0;
+	if (number > 0)
+	{
+		FedNumber = perv1 + perv2;
+		cout << FedNumber << " ";
+		perv2 = perv1;
+		perv1 = FedNumber;
+		PrintFibonacciUsingRecourse(number - 1, perv1, perv2);
+
+	}
+
+	
+}
 int main()
 {
-	//Problem21
+	//Problem22
 	int n = 10;
-	cout << "Fibonacci series using loop: ";
-	PrintFibonacciUsingLoop(n);
+	cout << "Fibonacci series using recursion: ";
+	PrintFibonacciUsingRecourse(n, 0, 1);
+
+	
+
+
+
+	//int n = 10;
+	//cout << "Fibonacci series using loop: ";
+	//PrintFibonacciUsingLoop(n);
 
 	//Problem20  Is palindrome array
 	/*int arr[3][3] = { { 1, 2, 1 }, { 5, 5, 5 }, { 7,5, 7 } };
