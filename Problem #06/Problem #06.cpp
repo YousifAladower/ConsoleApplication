@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <string>
 using namespace std;
 int GetRandomNumber(int min, int max)
 {
@@ -185,12 +186,39 @@ void PrintFibonacciUsingRecourse(int number, int perv1,int perv2)
 
 	
 }
+string ReadString()
+{
+	string str;
+	cout << "Enter a string: ";
+	getline(cin, str);
+	return str;
+}
+void PrintFirstLetterFormEveryWorld(string S1)
+{
+	bool IsFirstLetter = true;
+	for (int i = 0; i < S1.length(); i++)
+	{
+		if (S1[i] != ' ' && IsFirstLetter)
+		{
+			cout << S1[i] << endl;
+		}
+		IsFirstLetter = (S1[i] == ' ') ? true : false;
+	}
+	
+}
 int main()
 {
-	//Problem22
-	int n = 10;
-	cout << "Fibonacci series using recursion: ";
-	PrintFibonacciUsingRecourse(n, 0, 1);
+	//Problem23
+	PrintFirstLetterFormEveryWorld(ReadString());
+
+
+
+
+
+	////Problem22
+	//int n = 10;
+	//cout << "Fibonacci series using recursion: ";
+	//PrintFibonacciUsingRecourse(n, 0, 1);
 
 	
 
