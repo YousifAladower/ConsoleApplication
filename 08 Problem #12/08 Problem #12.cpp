@@ -64,6 +64,53 @@ bool IsDate1EqualDate2(sDate date1, sDate date2)
 {  
    return (date1.Year == date2.Year && date1.Month == date2.Month && date1.Day == date2.Day);  
 }
+bool IsDayLastDayOfMonth(sDate date)
+{
+	return (date.Day == NumberOfDaysInAMonth(date.Month, date.Year));
+}
+bool IsMonthLastMonthOfYear(sDate date)
+{
+	return (date.Month == 12);
+}
+sDate IncreaseDateByOneDay(sDate date)
+{
+	sDate newDate = date;
+	if (IsDayLastDayOfMonth(date))
+	{
+		newDate.Day = 1;
+		if (IsMonthLastMonthOfYear(date))
+		{
+			newDate.Month = 1;
+			newDate.Year++;
+		}
+		else
+		{
+			newDate.Month++;
+		}
+	}
+	else
+	{
+		newDate.Day++;
+	}
+	return newDate;
+}
+short DiffirenteBetweenTwoDates(sDate date1, sDate date2)  
+{  
+   if (IsDate1EqualDate2(date1, date2))  
+       return 0;  
+
+   // Ensure date1 is always the earlier date  
+   if (!IsDate1BeforeDate2(date1, date2))  
+       std::swap(date1, date2);  
+
+   short Days = 0;  
+   while (!IsDate1EqualDate2(date1, date2))  
+   {  
+       Days++;  
+       date1 = IncreaseDateByOneDay(date1);  
+   }  
+   return Days;  
+}
 short ReadDay()
 {
 	short Day;
@@ -102,11 +149,29 @@ short ReadDaysToAdd()
 }
 int main()
 {
-	sDate Date = ReadFullDate();
+	sDate Date1 = ReadFullDate();
+	sDate Date2 = ReadFullDate();
+	cout << "\n DiffirenteBetweenTwoDates:" << DiffirenteBetweenTwoDates(Date1, Date2);
+	system("pause>0");
+	return 0;
+
+
+
+	//sDate Date = ReadFullDate();
+	//sDate DateIncrese = IncreaseDateByOneDay(Date);
+	//cout << "\n Date after Increase ";
+	//cout << DateIncrese.Day << "/" << DateIncrese.Month << "/" << DateIncrese.Year;
+	//system("pause>0");
+	//return 0;
+
+
+
+
+	/*sDate Date = ReadFullDate();
 	short Days = ReadDaysToAdd();
 	Date = DateAddDays(Days, Date);
 	cout << "\nDate after adding [" << Days << "] days is: ";
 	cout << Date.Day << "/" << Date.Month << "/" << Date.Year;
 	system("pause>0");
-	return 0;
+	return 0;*/
 }
