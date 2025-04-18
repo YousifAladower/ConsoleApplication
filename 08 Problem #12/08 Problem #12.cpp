@@ -60,6 +60,10 @@ bool IsDate1BeforeDate2(sDate date1, sDate date2)
    if (date1.Month != date2.Month) return date1.Month < date2.Month;  
    return date1.Day < date2.Day;  
 }
+bool IsDate1EqualDate2(sDate date1, sDate date2)  
+{  
+   return (date1.Year == date2.Year && date1.Month == date2.Month && date1.Day == date2.Day);  
+}
 short ReadDay()
 {
 	short Day;
