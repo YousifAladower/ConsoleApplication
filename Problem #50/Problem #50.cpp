@@ -87,8 +87,7 @@ void PrintClientCard(sClient Client)
 	cout << "\nAccount Balance: " << Client.AccountBalance;
 }
 
-bool FindClientByAccountNumber(string AccountNumber, vector
-	<sClient> vClients, sClient & Client)
+bool FindClientByAccountNumber(string AccountNumber, vector<sClient> vClients, sClient & Client)
 {
 	for (sClient C : vClients)
 	{
@@ -100,8 +99,7 @@ bool FindClientByAccountNumber(string AccountNumber, vector
 	}
 	return false;
 }
-bool MarkClientForDeleteByAccountNumber(string AccountNumber,
-	vector <sClient>& vClients)
+bool MarkClientForDeleteByAccountNumber(string AccountNumber,vector <sClient>& vClients)
 {
 	for (sClient& C : vClients)
 	{
@@ -113,8 +111,7 @@ bool MarkClientForDeleteByAccountNumber(string AccountNumber,
 	}
 	return false;
 }
-vector <sClient> SaveCleintsDataToFile(string FileName, vector
-	<sClient> vClients)
+vector <sClient> SaveCleintsDataToFile(string FileName, vector<sClient> vClients)
 {
 	fstream MyFile;
 	MyFile.open(FileName, ios::out);//overwrite
@@ -135,8 +132,7 @@ vector <sClient> SaveCleintsDataToFile(string FileName, vector
 	return vClients;
 }
 
-bool DeleteClientByAccountNumber(string AccountNumber, vector
-	<sClient>&vClients)
+bool DeleteClientByAccountNumber(string AccountNumber, vector<sClient>&vClients)
 {
 	sClient Client;
 	char Answer = 'n';
@@ -173,8 +169,7 @@ string ReadClientAccountNumber()
 
 int main()
 {
-	vector <sClient> vClients =
-		LoadCleintsDataFromFile(ClientsFileName);
+	vector <sClient> vClients =LoadCleintsDataFromFile(ClientsFileName);
 	string AccountNumber = ReadClientAccountNumber();
 	DeleteClientByAccountNumber(AccountNumber, vClients);
 	system("pause>0");
