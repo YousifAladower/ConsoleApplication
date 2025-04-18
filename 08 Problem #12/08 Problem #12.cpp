@@ -18,8 +18,7 @@ short NumberOfDaysInAMonth(short Month, short Year)
 	return (Month == 2) ? (isLeapYear(Year) ? 29 : 28) :
 		days[Month - 1];
 }
-short NumberOfDaysFromTheBeginingOfTheYear(short Day, short Month,
-	short Year)
+short NumberOfDaysFromTheBeginingOfTheYear(short Day, short Month,short Year)
 {
 	short TotalDays = 0;
 	for (int i = 1; i <= Month - 1; i++)
@@ -55,7 +54,12 @@ sDate DateAddDays(short Days, sDate Date)
 	}
 	return Date;
 }
-
+bool IsDate1BeforeDate2(sDate date1, sDate date2)  
+{  
+   if (date1.Year != date2.Year) return date1.Year < date2.Year;  
+   if (date1.Month != date2.Month) return date1.Month < date2.Month;  
+   return date1.Day < date2.Day;  
+}
 short ReadDay()
 {
 	short Day;
