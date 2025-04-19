@@ -54,6 +54,15 @@ bool IsOverlapPeriods(stPeriod Period1, stPeriod Period2)
 	else
 		return true;
 }
+bool IsDateWithinPeriod(stDate Date, stPeriod Period)
+{
+	if (CompareDates(Date, Period.StartDate) == enDateCompare::Before ||
+		CompareDates(Date, Period.EndDate) == enDateCompare::After)
+		return false;
+	else
+		return true;
+}
+
 short ReadDay()
 {
 	short Day;
