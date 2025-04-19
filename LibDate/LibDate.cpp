@@ -228,6 +228,140 @@ sDate IncreaseDateByOneMillennium(sDate date)
 	}
 	return newDate;
 }
+sDate SubtractDateByOneDay(sDate date)
+{
+	sDate newDate = date;
+	if (date.Day == 1)
+	{
+		if (date.Month == 1)
+		{
+			newDate.Month = 12;
+			newDate.Year--;
+			newDate.Day = NumberOfDaysInAMonth(newDate.Month, newDate.Year);
+		}
+		else
+		{
+			newDate.Month--;
+			newDate.Day = NumberOfDaysInAMonth(newDate.Month, newDate.Year);
+		}
+	}
+	else
+	{
+		newDate.Day--;
+	}
+	return newDate;
+}
+sDate SubtractDateByDays(sDate date, short Days)
+{
+	sDate newDate = date;
+	for (short i = 0; i < Days; i++)
+	{
+		newDate = SubtractDateByOneDay(newDate);
+	}
+	return newDate;
+}
+sDate SubtractDateByOneWeek(sDate date)
+{
+	sDate newDate = date;
+	for (short i = 0; i < 7; i++)
+	{
+		newDate = SubtractDateByOneDay(newDate);
+	}
+	return newDate;
+}
+sDate SubtractDateByXWeeks(sDate date, short Weeks)
+{
+	sDate newDate = date;
+	for (short i = 0; i < Weeks * 7; i++)
+	{
+		newDate = SubtractDateByOneDay(newDate);
+	}
+	return newDate;
+}
+sDate SubtractDateByXMonths(sDate date, short Months)
+{
+	sDate newDate = date;
+	for (short i = 0; i < Months; i++)
+	{
+		if (newDate.Month == 1)
+		{
+			newDate.Month = 12;
+			newDate.Year--;
+		}
+		else
+		{
+			newDate.Month--;
+		}
+	}
+	return newDate;
+}
+sDate SubtractDateByXYears(sDate date, short Years)
+{
+	sDate newDate = date;
+	newDate.Year -= Years;
+	return newDate;
+}
+sDate SubtractDateByXYearsFaster(sDate date, short Years)
+{
+	sDate newDate = date;
+	newDate.Year -= Years;
+	if (date.Month == 2 && date.Day == 29 && !isLeapYear(newDate.Year))
+	{
+		newDate.Day = 28;
+	}
+	return newDate;
+}
+sDate SubtractDateByXDecades(sDate date, short Decades)
+{
+	sDate newDate = date;
+	newDate.Year -= Decades * 10;
+	if (date.Month == 2 && date.Day == 29 && !isLeapYear(newDate.Year))
+	{
+		newDate.Day = 28;
+	}
+	return newDate;
+}
+sDate SubtractDateByXDecadesFaster(sDate date, short Decades)
+{
+	sDate newDate = date;
+	newDate.Year -= Decades * 10;
+	if (date.Month == 2 && date.Day == 29 && !isLeapYear(newDate.Year))
+	{
+		newDate.Day = 28;
+	}
+	return newDate;
+}
+
+sDate SubtractDateByOneCentury(sDate date)
+{
+	sDate newDate = date;
+	newDate.Year -= 100;
+	if (date.Month == 2 && date.Day == 29 && !isLeapYear(newDate.Year))
+	{
+		newDate.Day = 28;
+	}
+	return newDate;
+}
+sDate SubtractDateByXCenturies(sDate date, short Centuries)
+{
+	sDate newDate = date;
+	newDate.Year -= Centuries * 100;
+	if (date.Month == 2 && date.Day == 29 && !isLeapYear(newDate.Year))
+	{
+		newDate.Day = 28;
+	}
+	return newDate;
+}
+sDate SubtractDateByOneMillennium(sDate date)
+{
+	sDate newDate = date;
+	newDate.Year -= 1000;
+	if (date.Month == 2 && date.Day == 29 && !isLeapYear(newDate.Year))
+	{
+		newDate.Day = 28;
+	}
+	return newDate;
+}
 short DiffirenteBetweenTwoDates(sDate date1, sDate date2)
 {
 	if (IsDate1EqualDate2(date1, date2))
