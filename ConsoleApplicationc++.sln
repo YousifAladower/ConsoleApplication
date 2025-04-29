@@ -63,6 +63,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "exerciseForClass", "exercis
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Up Casting vs Down Casting", "Up Casting vs Down Casting\Up Casting vs Down Casting.vcxproj", "{5A269F4F-3650-40DD-846A-74CF5FAAA544}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "interface or abstract", "interface or abstract\interface or abstract.vcxproj", "{AA9E1B49-3A01-407B-A498-6EA347ABDE60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -287,6 +289,14 @@ Global
 		{5A269F4F-3650-40DD-846A-74CF5FAAA544}.Release|x64.Build.0 = Release|x64
 		{5A269F4F-3650-40DD-846A-74CF5FAAA544}.Release|x86.ActiveCfg = Release|Win32
 		{5A269F4F-3650-40DD-846A-74CF5FAAA544}.Release|x86.Build.0 = Release|Win32
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Debug|x64.ActiveCfg = Debug|x64
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Debug|x64.Build.0 = Debug|x64
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Debug|x86.ActiveCfg = Debug|Win32
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Debug|x86.Build.0 = Debug|Win32
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Release|x64.ActiveCfg = Release|x64
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Release|x64.Build.0 = Release|x64
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Release|x86.ActiveCfg = Release|Win32
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -314,6 +324,7 @@ Global
 		{E65EAE07-20A1-486E-A939-E42B6923AFC6} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
 		{AB3C4241-5D55-4C6D-BF6A-D7DAECF0D973} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
 		{5A269F4F-3650-40DD-846A-74CF5FAAA544} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
+		{AA9E1B49-3A01-407B-A498-6EA347ABDE60} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7880D708-679C-4442-8523-BCA471940B0A}
