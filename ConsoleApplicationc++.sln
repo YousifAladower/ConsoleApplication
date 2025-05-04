@@ -71,6 +71,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nested Classes - Constructo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "thispointer", "thispointer\thispointer.vcxproj", "{E94F2303-08C2-4B67-BBED-F30E21196294}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Objects and Dynamic Array", "Objects and Dynamic Array\Objects and Dynamic Array.vcxproj", "{E45B0387-3184-4F36-8764-09E50762A832}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -327,6 +329,14 @@ Global
 		{E94F2303-08C2-4B67-BBED-F30E21196294}.Release|x64.Build.0 = Release|x64
 		{E94F2303-08C2-4B67-BBED-F30E21196294}.Release|x86.ActiveCfg = Release|Win32
 		{E94F2303-08C2-4B67-BBED-F30E21196294}.Release|x86.Build.0 = Release|Win32
+		{E45B0387-3184-4F36-8764-09E50762A832}.Debug|x64.ActiveCfg = Debug|x64
+		{E45B0387-3184-4F36-8764-09E50762A832}.Debug|x64.Build.0 = Debug|x64
+		{E45B0387-3184-4F36-8764-09E50762A832}.Debug|x86.ActiveCfg = Debug|Win32
+		{E45B0387-3184-4F36-8764-09E50762A832}.Debug|x86.Build.0 = Debug|Win32
+		{E45B0387-3184-4F36-8764-09E50762A832}.Release|x64.ActiveCfg = Release|x64
+		{E45B0387-3184-4F36-8764-09E50762A832}.Release|x64.Build.0 = Release|x64
+		{E45B0387-3184-4F36-8764-09E50762A832}.Release|x86.ActiveCfg = Release|Win32
+		{E45B0387-3184-4F36-8764-09E50762A832}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -358,6 +368,7 @@ Global
 		{030FF434-DEE4-401F-860C-6C4D20F4627A} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
 		{EA73EA6F-F355-4539-A9E2-F488C7A83477} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
 		{E94F2303-08C2-4B67-BBED-F30E21196294} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
+		{E45B0387-3184-4F36-8764-09E50762A832} = {4D7591AF-FF37-4C8A-9B03-7300E709C12D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7880D708-679C-4442-8523-BCA471940B0A}
