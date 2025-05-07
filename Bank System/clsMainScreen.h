@@ -2,8 +2,8 @@
 #include <iostream>
 #include "clsScreen.h"
 #include "clsInputValidate.h"
-#include <iomanip>
-
+#include "clsClientListScreen.h"
+#include "clsAddNewClientScreen.h"
 
 using namespace std;
 
@@ -17,6 +17,7 @@ private:
         eUpdateClient = 4, eFindClient = 5, eShowTransactionsMenue = 6,
         eManageUsers = 7, eExit = 8
     };
+
     static short _ReadMainMenueOption()
     {
         cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 8]? ";
@@ -34,14 +35,16 @@ private:
 
     static void _ShowAllClientsScreen()
     {
-        cout << "\nClient List Screen Will be here...\n";
+        //  cout << "\nClient List Screen Will be here...\n";
+        clsClientListScreen::ShowClientsList();
 
 
     }
 
     static void _ShowAddNewClientsScreen()
     {
-        cout << "\nAdd New Client Screen Will be here...\n";
+        // cout << "\nAdd New Client Screen Will be here...\n";
+        clsAddNewClientScreen::ShowAddNewClientScreen();
 
     }
 
