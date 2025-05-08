@@ -86,5 +86,8 @@
     <ClInclude Include="clsListUsersScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsDeleteUserScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
