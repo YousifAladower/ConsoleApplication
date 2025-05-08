@@ -9,7 +9,6 @@
 #include "clsFindClientScreen.h"
 #include "clsTransactionsScreen.h"
 #include "clsManageUsersScreen.h"
-#include "clsLoginScreen.h"
 #include "Global.h"
 
 using namespace std;
