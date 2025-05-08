@@ -8,6 +8,7 @@
 #include <iomanip>
 #include "clsUtil.h"
 #include "clsMainScreen.h"
+#include "clsLoginScreen.h"
 void PrintClientRecordBalanceLine(clsBankClient Client)
 {
 
@@ -163,7 +164,14 @@ void AddNewClient()
 
 int main()
 {
-    clsMainScreen::ShowMainMenue();
+    clsLoginScreen::ShowLoginScreen();
+
+
+   // clsMainScreen::ShowMainMenue();
+   
+    
+    
+    
     //ShowTotalBalances();
 
     //ShowClientsList();
