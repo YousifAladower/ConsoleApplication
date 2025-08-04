@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+#include "Global.h"
 
 using namespace std;
 
@@ -15,6 +15,9 @@ protected:
         {
             cout << "\n\t\t\t\t\t  " << SubTitle;
         }
+		cout << "\n\t\t\t\t\t User: " << CurrentUser.UserName <<"\n";
+		cout << "\n\t\t\t\t\tDate: " << clsDate::DateToString(clsDate()) << "\n";
+
         cout << "\n\t\t\t\t\t______________________________________\n\n";
     }
 

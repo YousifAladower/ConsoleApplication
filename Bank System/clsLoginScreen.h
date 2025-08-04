@@ -14,16 +14,22 @@ private:
     static  void _Login()
     {
         bool LoginFaild = false;
-
+		int numberofTrailLogin = 0;
+		int numberofMaxLogin = 3;
         string Username, Password;
         do
         {
-
+            
             if (LoginFaild)
             {
-                cout << "\nInvlaid Username/Password!\n\n";
+                cout << "\nInvalid Username/Password!\n\n";
+				cout << "You have " << numberofMaxLogin-1 << " trial(s) left.\n";
             }
-
+            if(numberofTrailLogin == numberofMaxLogin)
+            {
+                cout << "\nYou have reached the maximum number of login attempts. Exiting...\n";
+                exit(0);
+			}
             cout << "Enter Username? ";
             cin >> Username;
 
